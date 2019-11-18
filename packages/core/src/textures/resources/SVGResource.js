@@ -1,4 +1,4 @@
-import { uid } from '@pixi/utils';
+import {uid} from "../../../../utils/src/data/uid";
 import { BaseImageResource } from './BaseImageResource';
 
 /**

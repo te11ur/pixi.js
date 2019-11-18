@@ -1,4 +1,4 @@
-import { Runner } from '@pixi/runner';
+import {Runner} from "../../../runner/src/Runner";
 
 let UID = 0;
 /* eslint-disable max-len */

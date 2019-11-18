@@ -1,4 +1,4 @@
-import { MeshGeometry } from '@pixi/mesh';
+import {MeshGeometry} from "../../../mesh/src/MeshGeometry";
 /**
  * RopeGeometry allows you to draw a geometry across several points and then manipulate these points.
  *

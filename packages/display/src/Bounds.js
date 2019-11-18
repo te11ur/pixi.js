@@ -1,4 +1,4 @@
-import { Rectangle } from '@pixi/math';
+import {Rectangle} from "../../math/src/shapes/Rectangle";
 
 /**
  * 'Builder' pattern for bounds rectangles.

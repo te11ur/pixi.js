@@ -1,5 +1,5 @@
 import { getTestContext } from './getTestContext';
-import { PRECISION } from '@pixi/constants';
+import {PRECISION} from "../../../../constants/src";
 
 let maxFragmentPrecision;
 

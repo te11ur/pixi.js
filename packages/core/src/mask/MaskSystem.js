@@ -1,7 +1,7 @@
 import { System } from '../System';
 import { MaskData } from './MaskData';
 import { SpriteMaskFilter } from '../filters/spriteMask/SpriteMaskFilter';
-import { MASK_TYPES } from '@pixi/constants';
+import {MASK_TYPES} from "../../../constants/src";
 
 /**
  * System plugin to the renderer to manage masks.

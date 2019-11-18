@@ -1,4 +1,4 @@
-import { settings } from '@pixi/settings';
+import {settings} from "../../settings/src/settings";
 
 /**
  * Sets the default value for the container property 'sortableChildren'.

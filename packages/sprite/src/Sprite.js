@@ -1,9 +1,11 @@
-import { Point, ObservablePoint, Rectangle } from '@pixi/math';
-import { sign } from '@pixi/utils';
-import { Texture } from '@pixi/core';
-import { BLEND_MODES } from '@pixi/constants';
-import { Container } from '@pixi/display';
-import { settings } from '@pixi/settings';
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {Point} from "../../math/src/Point";
+import {ObservablePoint} from "../../math/src/ObservablePoint";
+import { Texture } from '../../core/src/textures/Texture';
+import { Container } from '../../display/src/Container';
+import {BLEND_MODES} from "../../constants/src";
+import {sign} from "../../utils/src/data/sign";
+import {settings} from "../../settings/src/settings";
 
 const tempPoint = new Point();
 const indices = new Uint16Array([0, 1, 2, 0, 2, 3]);

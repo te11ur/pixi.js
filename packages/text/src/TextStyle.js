@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import { TEXT_GRADIENT } from './const';
-import { hex2string } from '@pixi/utils';
+import {hex2string} from "../../utils/src/color/hex";
 
 const defaultStyle = {
     align: 'left',
@@ -43,7 +43,7 @@ const genericFontFamilies = [
     'cursive',
     'fantasy',
     'system-ui',
-]
+];
 
 /**
  * A TextStyle Object contains information to decorate a Text objects.

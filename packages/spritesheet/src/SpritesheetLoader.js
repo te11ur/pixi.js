@@ -1,5 +1,5 @@
-import { url } from '@pixi/utils';
-import { LoaderResource } from '@pixi/loaders';
+import {LoaderResource} from "../../loaders/src";
+import url from "url";
 import { Spritesheet } from './Spritesheet';
 
 /**

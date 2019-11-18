@@ -1,5 +1,5 @@
 import { BaseImageResource } from './BaseImageResource';
-import { Ticker } from '@pixi/ticker';
+import {Ticker} from "../../../../ticker/src/Ticker";
 
 /**
  * Resource type for HTMLVideoElement.

@@ -1,4 +1,4 @@
-import isMobile from 'ismobilejs';
+import {ismobile} from "../../utils/src/const";
 import { maxRecommendedTextures } from './utils/maxRecommendedTextures';
 import { canUploadSameBuffer } from './utils/canUploadSameBuffer';
 
@@ -200,7 +200,7 @@ export const settings = {
      * @type {PIXI.PRECISION}
      * @default PIXI.PRECISION.MEDIUM
      */
-    PRECISION_FRAGMENT: isMobile.apple.device ? 'highp' : 'mediump',
+    PRECISION_FRAGMENT: ismobile.apple.device ? 'highp' : 'mediump',
 
     /**
      * Can we upload the same buffer in a single frame?
@@ -229,7 +229,6 @@ export const settings = {
      * The main disadvantage is movement of objects may appear less smooth.
      *
      * @static
-     * @constant
      * @memberof PIXI.settings
      * @type {boolean}
      * @default false

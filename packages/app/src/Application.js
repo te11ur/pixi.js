@@ -1,5 +1,5 @@
-import { Container } from '@pixi/display';
-import { autoDetectRenderer } from '@pixi/core';
+import { Container } from '../../display/src/Container';
+import { autoDetectRenderer } from '../../core/src/autoDetectRenderer';
 
 /**
  * Convenience class to create a new PIXI application.

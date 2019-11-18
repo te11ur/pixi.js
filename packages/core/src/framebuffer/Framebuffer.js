@@ -1,7 +1,7 @@
-import { Runner } from '@pixi/runner';
+import {FORMATS, TYPES} from "../../../constants/src";
+import {Runner} from "../../../runner/src/Runner";
 import { BaseTexture } from '../textures/BaseTexture';
 import { DepthResource } from '../textures/resources/DepthResource';
-import { FORMATS, TYPES } from '@pixi/constants';
 
 /**
  * Frame buffer used by the BaseRenderTexture

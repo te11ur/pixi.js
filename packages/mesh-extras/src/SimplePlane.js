@@ -1,6 +1,7 @@
-import { Texture } from '@pixi/core';
-import { Mesh, MeshMaterial } from '@pixi/mesh';
+import { Texture } from '../../core/src/textures/Texture';
 import { PlaneGeometry } from './geometry/PlaneGeometry';
+import {Mesh} from "../../mesh/src/Mesh";
+import {MeshMaterial} from "../../mesh/src/MeshMaterial";
 
 /**
  * The SimplePlane allows you to draw a texture across several points and then manipulate these points

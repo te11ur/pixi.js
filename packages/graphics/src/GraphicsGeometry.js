@@ -6,17 +6,17 @@ import {
     BATCH_POOL,
     DRAW_CALL_POOL } from './utils';
 
-import {
-    BatchGeometry,
-    BatchDrawCall,
-    BatchTextureArray,
-    BaseTexture } from '@pixi/core';
-
-import { DRAW_MODES, WRAP_MODES } from '@pixi/constants';
-import { SHAPES, Point, Matrix } from '@pixi/math';
+import {BatchGeometry} from "../../core/src/batch/BatchGeometry";
+import {BatchDrawCall} from "../../core/src/batch/BatchDrawCall";
+import {BatchTextureArray} from "../../core/src/batch/BatchTextureArray";
+import {BaseTexture} from "../../core/src/textures/BaseTexture";
 import { GraphicsData } from './GraphicsData';
-import { premultiplyTint } from '@pixi/utils';
-import { Bounds } from '@pixi/display';
+import {DRAW_MODES, WRAP_MODES} from "../../constants/src";
+import {SHAPES} from "../../math/src/const";
+import {Point} from "../../math/src/Point";
+import {Matrix} from "../../math/src/Matrix";
+import {premultiplyTint} from "../../utils/src/color/premultiply";
+import {Bounds} from "../../display/src/Bounds";
 
 const tmpPoint = new Point();
 const tmpBounds = new Bounds();

@@ -1,5 +1,5 @@
 import { BufferResource } from './BufferResource';
-import { ALPHA_MODES } from '@pixi/constants';
+import {ALPHA_MODES} from "../../../../constants/src";
 
 /**
  * Resource type for DepthTexture.

@@ -1,6 +1,7 @@
-import { createIndicesForQuads } from '@pixi/utils';
-import { Geometry, Buffer } from '@pixi/core';
-import { TYPES } from '@pixi/constants';
+import {createIndicesForQuads} from "../../utils/src/data/createIndicesForQuads";
+import {Geometry} from "../../core/src/geometry/Geometry";
+import {Buffer} from "../../core/src/geometry/Buffer";
+import {TYPES} from "../../constants/src";
 
 /**
  * @author Mat Groves

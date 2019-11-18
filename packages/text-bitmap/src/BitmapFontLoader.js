@@ -1,4 +1,4 @@
-import { LoaderResource } from '@pixi/loaders';
+import {LoaderResource} from "../../loaders/src";
 import { BitmapText } from './BitmapText';
 
 /**

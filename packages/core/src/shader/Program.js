@@ -1,16 +1,16 @@
 // import * as from '../systems/shader/shader';
-import { setPrecision,
-    defaultValue,
-    compileProgram,
-    mapSize,
-    mapType,
-    getTestContext,
-    getMaxFragmentPrecision } from './utils';
-import { ProgramCache } from '@pixi/utils';
+import {setPrecision} from "./utils/setPrecision";
+import {defaultValue} from "./utils/defaultValue";
+import {compileProgram} from "./utils/compileProgram";
+import {mapSize} from "./utils/mapSize";
+import {mapType} from "./utils/mapType";
+import {getTestContext} from "./utils/getTestContext";
+import {getMaxFragmentPrecision} from "./utils/getMaxFragmentPrecision";
 import defaultFragment from './defaultProgram.frag';
 import defaultVertex from './defaultProgram.vert';
-import { settings } from '@pixi/settings';
-import { PRECISION } from '@pixi/constants';
+import {ProgramCache} from "../../../utils/src/media/caches";
+import {PRECISION} from "../../../constants/src";
+import {settings} from "../../../settings/src/settings";
 
 let UID = 0;
 

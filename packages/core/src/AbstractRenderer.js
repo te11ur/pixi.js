@@ -1,9 +1,12 @@
-import { hex2string, hex2rgb, deprecation, EventEmitter } from '@pixi/utils';
-import { Matrix, Rectangle } from '@pixi/math';
-import { RENDERER_TYPE } from '@pixi/constants';
-import { settings } from '@pixi/settings';
-import { Container } from '@pixi/display';
+import {hex2rgb, hex2string} from "../../utils/src/color/hex";
+//import {deprecation} from "../../utils/src/logging/deprecation";
+import {Matrix} from "../../math/src/Matrix";
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {RENDERER_TYPE} from "../../constants/src";
+import {settings} from "../../settings/src/settings";
+import {Container} from "../../display/src/Container";
 import { RenderTexture } from './renderTexture/RenderTexture';
+import EventEmitter from "eventemitter3";
 
 const tempMatrix = new Matrix();
 
@@ -45,11 +48,11 @@ export class AbstractRenderer extends EventEmitter
         options = Object.assign({}, settings.RENDER_OPTIONS, options);
 
         // Deprecation notice for renderer roundPixels option
-        if (options.roundPixels)
+       /* if (options.roundPixels)
         {
             settings.ROUND_PIXELS = options.roundPixels;
             deprecation('5.0.0', 'Renderer roundPixels option is deprecated, please use PIXI.settings.ROUND_PIXELS', 2);
-        }
+        }*/
 
         /**
          * The supplied constructor options.

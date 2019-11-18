@@ -1,5 +1,5 @@
 import { Filter } from '../Filter';
-import { Matrix } from '@pixi/math';
+import {Matrix} from "../../../../math/src/Matrix";
 import vertex from './spriteMaskFilter.vert';
 import fragment from './spriteMaskFilter.frag';
 import { TextureMatrix } from '../../textures/TextureMatrix';

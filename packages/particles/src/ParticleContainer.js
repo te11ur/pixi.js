@@ -1,6 +1,6 @@
-import { BLEND_MODES } from '@pixi/constants';
-import { hex2rgb } from '@pixi/utils';
-import { Container } from '@pixi/display';
+import {BLEND_MODES} from "../../constants/src";
+import {hex2rgb} from "../../utils/src/color/hex";
+import { Container } from '../../display/src/Container';
 
 /**
  * The ParticleContainer class is a really fast version of the Container built solely for speed,

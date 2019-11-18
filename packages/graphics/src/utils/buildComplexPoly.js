@@ -1,4 +1,4 @@
-import { hex2rgb } from '@pixi/utils';
+import {hex2rgb} from "../../../utils/src/color/hex";
 
 /**
  * Builds a complex polygon to draw

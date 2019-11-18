@@ -1,6 +1,7 @@
-import { Texture } from '@pixi/core';
-import { Sprite } from '@pixi/sprite';
-import { Ticker, UPDATE_PRIORITY } from '@pixi/ticker';
+import { Texture } from '../../core/src/textures/Texture';
+import {Sprite} from "../../sprite/src/Sprite";
+import {Ticker} from "../../ticker/src/Ticker";
+import {UPDATE_PRIORITY} from "../../ticker/src/const";
 
 /**
  * An AnimatedSprite is a simple way to display an animation depicted by a list of textures.

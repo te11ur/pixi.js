@@ -1,7 +1,8 @@
-import { TYPES } from '@pixi/constants';
-import { ObjectRenderer, Shader } from '@pixi/core';
-import { correctBlendMode, premultiplyRgba, premultiplyTint } from '@pixi/utils';
-import { Matrix } from '@pixi/math';
+import {TYPES} from "../../constants/src";
+import {ObjectRenderer} from "../../core/src/batch/ObjectRenderer";
+import {Shader} from "../../core/src/shader/Shader";
+import {correctBlendMode, premultiplyRgba, premultiplyTint} from "../../utils/src/color/premultiply";
+import {Matrix} from "../../math/src/Matrix";
 import { ParticleBuffer } from './ParticleBuffer';
 import vertex from './particles.vert';
 import fragment from './particles.frag';

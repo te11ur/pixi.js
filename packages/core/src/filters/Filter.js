@@ -1,7 +1,7 @@
 import { Shader } from '../shader/Shader';
 import { Program } from '../shader/Program';
 import { State } from '../state/State';
-import { settings } from '@pixi/settings';
+import {settings} from "../../../settings/src/settings";
 import defaultVertex from './defaultFilter.vert';
 import defaultFragment from './defaultFilter.frag';
 

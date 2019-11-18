@@ -1,4 +1,4 @@
-import { MASK_TYPES } from '@pixi/constants';
+import {MASK_TYPES} from "../../../constants/src";
 
 /**
  * Component for masked elements

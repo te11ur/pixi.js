@@ -1,4 +1,4 @@
-import { Texture } from '@pixi/core';
+import { Texture } from '../../../core/src/textures/Texture';
 
 /**
  * Fill style object for Graphics.

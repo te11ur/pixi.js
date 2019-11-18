@@ -1,5 +1,6 @@
-import { Filter } from '@pixi/core';
-import { Matrix, Point } from '@pixi/math';
+import {Filter} from "../../../core/src/filters/Filter";
+import {Matrix} from "../../../math/src/Matrix";
+import {Point} from "../../../math/src/Point";
 import vertex from './displacement.vert';
 import fragment from './displacement.frag';
 

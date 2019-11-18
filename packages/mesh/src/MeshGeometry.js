@@ -1,5 +1,6 @@
-import { TYPES } from '@pixi/constants';
-import { Buffer, Geometry } from '@pixi/core';
+import {TYPES} from "../../constants/src";
+import {Geometry} from "../../core/src/geometry/Geometry";
+import {Buffer} from "../../core/src/geometry/Buffer";
 
 /**
  * Standard 2D geometry used in PixiJS.

@@ -1,8 +1,9 @@
-import { State } from '@pixi/core';
-import { Point, Polygon } from '@pixi/math';
-import { BLEND_MODES, DRAW_MODES } from '@pixi/constants';
-import { Container } from '@pixi/display';
-import { settings } from '@pixi/settings';
+import {State} from "../../core/src/state/State";
+import {Point} from "../../math/src/Point";
+import {Polygon} from "../../math/src/shapes/Polygon";
+import {BLEND_MODES, DRAW_MODES} from "../../constants/src";
+import {settings} from "../../settings/src/settings";
+import {Container} from "../../display/src/Container";
 import { MeshBatchUvs } from './MeshBatchUvs';
 
 const tempPoint = new Point();

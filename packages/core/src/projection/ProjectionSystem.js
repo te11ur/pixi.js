@@ -1,5 +1,5 @@
 import { System } from '../System';
-import { Matrix } from '@pixi/math';
+import {Matrix} from "../../../math/src/Matrix";
 
 /**
  * System plugin to the renderer to manage the projection matrix.

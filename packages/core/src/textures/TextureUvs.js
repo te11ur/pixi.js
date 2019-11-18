@@ -1,4 +1,4 @@
-import { groupD8 } from '@pixi/math';
+import {groupD8} from "../../../math/src/groupD8";
 
 /**
  * Stores a texture's frame in UV coordinates, in

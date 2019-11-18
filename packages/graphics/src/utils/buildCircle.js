@@ -1,4 +1,4 @@
-import { SHAPES } from '@pixi/math';
+import {SHAPES} from "../../../math/src/const";
 
 /**
  * Builds a circle to draw

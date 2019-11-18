@@ -1,6 +1,6 @@
-import { settings } from '@pixi/settings';
-import { ENV } from '@pixi/constants';
-import { isMobile } from '@pixi/utils';
+import {settings} from "../../settings/src/settings";
+import {ENV} from "../../constants/src";
+import {ismobile} from "../../utils/src/const";
 
 /**
  * The maximum support for using WebGL. If a device does not
@@ -18,7 +18,7 @@ import { isMobile } from '@pixi/utils';
  * @type {number}
  * @default PIXI.ENV.WEBGL2
  */
-settings.PREFER_ENV = isMobile.any ? ENV.WEBGL : ENV.WEBGL2;
+settings.PREFER_ENV = ismobile.any ? ENV.WEBGL : ENV.WEBGL2;
 
 /**
  * If set to `true`, Textures and BaseTexture objects stored

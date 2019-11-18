@@ -1,7 +1,10 @@
-import { TextureMatrix, Texture } from '@pixi/core';
-import { Point, Rectangle, Transform } from '@pixi/math';
-import { TextureCache } from '@pixi/utils';
-import { Sprite } from '@pixi/sprite';
+import {Texture} from '../../core/src/textures/Texture';
+import {TextureMatrix} from '../../core/src/textures/TextureMatrix';
+import {Point} from "../../math/src/Point";
+import {Transform} from "../../math/src/Transform";
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {TextureCache} from "../../utils/src/media/caches";
+import {Sprite} from "../../sprite/src/Sprite";
 
 const tempPoint = new Point();
 
@@ -12,15 +15,13 @@ const tempPoint = new Point();
  * @extends PIXI.Sprite
  * @memberof PIXI
  */
-export class TilingSprite extends Sprite
-{
+export class TilingSprite extends Sprite {
     /**
      * @param {PIXI.Texture} texture - the texture of the tiling sprite
      * @param {number} [width=100] - the width of the tiling sprite
      * @param {number} [height=100] - the height of the tiling sprite
      */
-    constructor(texture, width = 100, height = 100)
-    {
+    constructor(texture, width = 100, height = 100) {
         super(texture);
 
         /**
@@ -80,6 +81,7 @@ export class TilingSprite extends Sprite
          */
         this.uvRespectAnchor = false;
     }
+
     /**
      * Changes frame clamping in corresponding textureTransform, shortcut
      * Change to -0.5 to add a pixel to the edge, recommended for transparent trimmed textures in atlas
@@ -87,8 +89,7 @@ export class TilingSprite extends Sprite
      * @default 0.5
      * @member {number}
      */
-    get clampMargin()
-    {
+    get clampMargin() {
         return this.uvMatrix.clampMargin;
     }
 
@@ -103,8 +104,7 @@ export class TilingSprite extends Sprite
      *
      * @member {PIXI.ObservablePoint}
      */
-    get tileScale()
-    {
+    get tileScale() {
         return this.tileTransform.scale;
     }
 
@@ -118,8 +118,7 @@ export class TilingSprite extends Sprite
      *
      * @member {PIXI.ObservablePoint}
      */
-    get tilePosition()
-    {
+    get tilePosition() {
         return this.tileTransform.position;
     }
 
@@ -131,10 +130,8 @@ export class TilingSprite extends Sprite
     /**
      * @private
      */
-    _onTextureUpdate()
-    {
-        if (this.uvMatrix)
-        {
+    _onTextureUpdate() {
+        if (this.uvMatrix) {
             this.uvMatrix.texture = this._texture;
         }
         this._cachedTint = 0xFFFFFF;
@@ -146,13 +143,11 @@ export class TilingSprite extends Sprite
      * @protected
      * @param {PIXI.Renderer} renderer - The renderer
      */
-    _render(renderer)
-    {
+    _render(renderer) {
         // tweak our texture temporarily..
         const texture = this._texture;
 
-        if (!texture || !texture.valid)
-        {
+        if (!texture || !texture.valid) {
             return;
         }
 
@@ -168,8 +163,7 @@ export class TilingSprite extends Sprite
      *
      * @protected
      */
-    _calculateBounds()
-    {
+    _calculateBounds() {
         const minX = this._width * -this._anchor._x;
         const minY = this._height * -this._anchor._y;
         const maxX = this._width * (1 - this._anchor._x);
@@ -184,20 +178,16 @@ export class TilingSprite extends Sprite
      * @param {PIXI.Rectangle} rect - The output rectangle.
      * @return {PIXI.Rectangle} The bounds.
      */
-    getLocalBounds(rect)
-    {
+    getLocalBounds(rect) {
         // we can do a fast local bounds if the sprite has no children!
-        if (this.children.length === 0)
-        {
+        if (this.children.length === 0) {
             this._bounds.minX = this._width * -this._anchor._x;
             this._bounds.minY = this._height * -this._anchor._y;
             this._bounds.maxX = this._width * (1 - this._anchor._x);
             this._bounds.maxY = this._height * (1 - this._anchor._y);
 
-            if (!rect)
-            {
-                if (!this._localBoundsRect)
-                {
+            if (!rect) {
+                if (!this._localBoundsRect) {
                     this._localBoundsRect = new Rectangle();
                 }
 
@@ -216,20 +206,17 @@ export class TilingSprite extends Sprite
      * @param {PIXI.Point} point - the point to check
      * @return {boolean} Whether or not the sprite contains the point.
      */
-    containsPoint(point)
-    {
+    containsPoint(point) {
         this.worldTransform.applyInverse(point, tempPoint);
 
         const width = this._width;
         const height = this._height;
         const x1 = -width * this.anchor._x;
 
-        if (tempPoint.x >= x1 && tempPoint.x < x1 + width)
-        {
+        if (tempPoint.x >= x1 && tempPoint.x < x1 + width) {
             const y1 = -height * this.anchor._y;
 
-            if (tempPoint.y >= y1 && tempPoint.y < y1 + height)
-            {
+            if (tempPoint.y >= y1 && tempPoint.y < y1 + height) {
                 return true;
             }
         }
@@ -247,8 +234,7 @@ export class TilingSprite extends Sprite
      * @param {boolean} [options.texture=false] - Should it destroy the current texture of the sprite as well
      * @param {boolean} [options.baseTexture=false] - Should it destroy the base texture of the sprite as well
      */
-    destroy(options)
-    {
+    destroy(options) {
         super.destroy(options);
 
         this.tileTransform = null;
@@ -265,8 +251,7 @@ export class TilingSprite extends Sprite
      * @param {number} height - the height of the tiling sprite
      * @return {PIXI.TilingSprite} The newly created texture
      */
-    static from(source, width, height)
-    {
+    static from(source, width, height) {
         return new TilingSprite(Texture.from(source), width, height);
     }
 
@@ -280,12 +265,10 @@ export class TilingSprite extends Sprite
      * @param {number} height - the height of the tiling sprite
      * @return {PIXI.TilingSprite} A new TilingSprite using a texture from the texture cache matching the frameId
      */
-    static fromFrame(frameId, width, height)
-    {
+    static fromFrame(frameId, width, height) {
         const texture = TextureCache[frameId];
 
-        if (!texture)
-        {
+        if (!texture) {
             throw new Error(`The frameId "${frameId}" does not exist in the texture cache ${this}`);
         }
 
@@ -303,11 +286,9 @@ export class TilingSprite extends Sprite
      * @param {Object} [options] - See {@link PIXI.BaseTexture}'s constructor for options.
      * @return {PIXI.TilingSprite} A new TilingSprite using a texture from the texture cache matching the image id
      */
-    static fromImage(imageId, width, height, options)
-    {
+    static fromImage(imageId, width, height, options) {
         // Fallback support for crossorigin, scaleMode parameters
-        if (options && typeof options !== 'object')
-        {
+        if (options && typeof options !== 'object') {
             options = {
                 scaleMode: arguments[4],
                 resourceOptions: {
@@ -324,8 +305,7 @@ export class TilingSprite extends Sprite
      *
      * @member {number}
      */
-    get width()
-    {
+    get width() {
         return this._width;
     }
 
@@ -339,8 +319,7 @@ export class TilingSprite extends Sprite
      *
      * @member {number}
      */
-    get height()
-    {
+    get height() {
         return this._height;
     }
 

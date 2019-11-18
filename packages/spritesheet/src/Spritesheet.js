@@ -1,6 +1,6 @@
-import { Rectangle } from '@pixi/math';
-import { Texture } from '@pixi/core';
-import { getResolutionOfUrl } from '@pixi/utils';
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {Texture} from "../../core/src/textures/Texture";
+import {getResolutionOfUrl} from "../../utils/src/network/getResolutionOfUrl";
 
 /**
  * Utility class for maintaining reference to a collection

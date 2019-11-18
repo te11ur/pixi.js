@@ -1,4 +1,5 @@
-import { Point, SHAPES } from '@pixi/math';
+import {SHAPES} from "../../../math/src/const";
+import {Point} from "../../../math/src/Point";
 
 /**
  * Builds a line to draw

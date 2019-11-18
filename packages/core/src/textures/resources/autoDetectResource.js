@@ -1,4 +1,11 @@
 import { ImageResource } from './ImageResource';
+import {ImageBitmapResource} from "./ImageBitmapResource";
+import {CanvasResource} from "./CanvasResource";
+import {VideoResource} from "./VideoResource";
+import {SVGResource} from "./SVGResource";
+import {BufferResource} from "./BufferResource";
+import {CubeResource} from "./CubeResource";
+import {ArrayResource} from "./ArrayResource";
 
 /**
  * Collection of installed resource types, class must extend {@link PIXI.resources.Resource}.
@@ -26,7 +33,16 @@ import { ImageResource } from './ImageResource';
  * @static
  * @readonly
  */
-export const INSTALLED = [];
+export const INSTALLED = [
+    ImageResource,
+    ImageBitmapResource,
+    CanvasResource,
+    VideoResource,
+    SVGResource,
+    BufferResource,
+    CubeResource,
+    ArrayResource
+];
 
 /**
  * Create a resource element from a single source element. This

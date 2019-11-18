@@ -1,6 +1,6 @@
 import { BaseImageResource } from './BaseImageResource';
-import { settings } from '@pixi/settings';
-import { ALPHA_MODES } from '@pixi/constants';
+import {settings} from "../../../../settings/src/settings";
+import {ALPHA_MODES} from "../../../../constants/src";
 
 /**
  * Resource type for HTMLImageElement.

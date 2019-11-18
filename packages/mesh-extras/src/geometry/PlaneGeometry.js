@@ -1,4 +1,4 @@
-import { MeshGeometry } from '@pixi/mesh';
+import {MeshGeometry} from "../../../mesh/src/MeshGeometry";
 
 export class PlaneGeometry extends MeshGeometry
 {

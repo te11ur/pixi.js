@@ -1,4 +1,4 @@
-import { PRECISION } from '@pixi/constants';
+import {PRECISION} from "../../../../constants/src";
 
 /**
  * Sets the float precision on the shader, ensuring the device supports the request precision.

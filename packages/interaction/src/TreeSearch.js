@@ -1,4 +1,4 @@
-import { Point } from '@pixi/math';
+import { Point } from '../../math/src/Point';
 
 /**
  * Strategy how to search through stage tree for interactive objects

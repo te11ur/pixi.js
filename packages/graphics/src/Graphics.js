@@ -1,20 +1,15 @@
-import {
-    Circle,
-    Ellipse,
-    PI_2,
-    Point,
-    Polygon,
-    Rectangle,
-    RoundedRectangle,
-    Matrix,
-    SHAPES,
-} from '@pixi/math';
-
-import {
-    Texture,
-    Shader,
-    UniformGroup, State,
-} from '@pixi/core';
+import {Circle} from "../../math/src/shapes/Circle";
+import {Ellipse} from "../../math/src/shapes/Ellipse";
+import {PI_2, SHAPES} from "../../math/src/const";
+import {Polygon} from "../../math/src/shapes/Polygon";
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {RoundedRectangle} from "../../math/src/shapes/RoundedRectangle";
+import {Matrix} from "../../math/src/Matrix";
+import {Point} from "../../math/src/Point";
+import {Texture} from "../../core/src/textures/Texture";
+import {UniformGroup} from "../../core/src/shader/UniformGroup";
+import {Shader} from "../../core/src/shader/Shader";
+import {State} from "../../core/src/state/State";
 
 import {
     BezierUtils,
@@ -23,12 +18,13 @@ import {
     Star,
 } from './utils';
 
-import { hex2rgb, deprecation } from '@pixi/utils';
+import {hex2rgb} from "../../utils/src/color/hex";
+//import {deprecation} from "../../utils/src/logging/deprecation";
 import { GraphicsGeometry } from './GraphicsGeometry';
 import { FillStyle } from './styles/FillStyle';
 import { LineStyle } from './styles/LineStyle';
-import { BLEND_MODES } from '@pixi/constants';
-import { Container } from '@pixi/display';
+import {BLEND_MODES} from "../../constants/src";
+import {Container} from "../../display/src/Container";
 
 const temp = new Float32Array(3);
 
@@ -273,7 +269,7 @@ export class Graphics extends Container
     lineStyle(options)
     {
         // Support non-object params: (width, color, alpha, alignment, native)
-        if (typeof options === 'number')
+       /* if (typeof options === 'number')
         {
             const args = arguments;
 
@@ -284,7 +280,7 @@ export class Graphics extends Container
                 alignment: args[3] !== undefined ? args[3] : 0.5,
                 native: !!args[4],
             };
-        }
+        }*/
 
         return this.lineTextureStyle(options);
     }
@@ -307,9 +303,9 @@ export class Graphics extends Container
     {
         // backward compatibility with params: (width, texture,
         // color, alpha, matrix, alignment, native)
-        if (typeof options === 'number')
+        /*if (typeof options === 'number')
         {
-            deprecation('v5.2.0', 'Please use object-based options for Graphics#lineTextureStyle');
+            //deprecation('v5.2.0', 'Please use object-based options for Graphics#lineTextureStyle');
 
             const [width, texture, color, alpha, matrix, alignment, native] = arguments;
 
@@ -317,7 +313,7 @@ export class Graphics extends Container
 
             // Remove undefined keys
             Object.keys(options).forEach((key) => options[key] === undefined && delete options[key]);
-        }
+        }*/
 
         // Apply defaults
         options = Object.assign({
@@ -642,9 +638,9 @@ export class Graphics extends Container
     beginTextureFill(options)
     {
         // backward compatibility with params: (texture, color, alpha, matrix)
-        if (options instanceof Texture)
+        /*if (options instanceof Texture)
         {
-            deprecation('v5.2.0', 'Please use object-based options for Graphics#beginTextureFill');
+            //deprecation('v5.2.0', 'Please use object-based options for Graphics#beginTextureFill');
 
             const [texture, color, alpha, matrix] = arguments;
 
@@ -652,7 +648,7 @@ export class Graphics extends Container
 
             // Remove undefined keys
             Object.keys(options).forEach((key) => options[key] === undefined && delete options[key]);
-        }
+        }*/
 
         // Apply defaults
         options = Object.assign({

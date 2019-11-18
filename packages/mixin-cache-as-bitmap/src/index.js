@@ -1,9 +1,11 @@
-import { Texture, BaseTexture, RenderTexture } from '@pixi/core';
-import { Sprite } from '@pixi/sprite';
-import { DisplayObject } from '@pixi/display';
-import { Matrix } from '@pixi/math';
-import { uid } from '@pixi/utils';
-import { settings } from '@pixi/settings';
+import { Texture } from '../../core/src/textures/Texture';
+import { BaseTexture } from '../../core/src/textures/BaseTexture';
+import {RenderTexture} from "../../core/src/renderTexture/RenderTexture";
+import {Sprite} from "../../sprite/src/Sprite";
+import {DisplayObject} from "../../display/src/DisplayObject";
+import {settings} from "../../settings/src/settings";
+import {Matrix} from "../../math/src/Matrix";
+import {uid} from "../../utils/src/data/uid";
 
 const _tempMatrix = new Matrix();
 

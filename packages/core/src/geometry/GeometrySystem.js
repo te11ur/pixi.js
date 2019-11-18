@@ -1,7 +1,7 @@
 import { System } from '../System';
 import { GLBuffer } from './GLBuffer';
-import { ENV } from '@pixi/constants';
-import { settings } from '../settings';
+import {ENV} from "../../../constants/src";
+import {settings} from "../../../settings/src/settings";
 
 const byteSizeMap = { 5126: 4, 5123: 2, 5121: 1 };
 

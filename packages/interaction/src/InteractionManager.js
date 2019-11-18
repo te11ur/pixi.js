@@ -1,10 +1,11 @@
-import { Ticker, UPDATE_PRIORITY } from '@pixi/ticker';
-import { DisplayObject } from '@pixi/display';
+import {DisplayObject} from "../../display/src/DisplayObject";
+import {UPDATE_PRIORITY} from "../../ticker/src/const";
+import {Ticker} from "../../ticker/src/Ticker";
+import EventEmitter from "eventemitter3";
 import { InteractionData } from './InteractionData';
 import { InteractionEvent } from './InteractionEvent';
 import { InteractionTrackingData } from './InteractionTrackingData';
 import { TreeSearch } from './TreeSearch';
-import { EventEmitter } from '@pixi/utils';
 import { interactiveTarget } from './interactiveTarget';
 
 // Mix interactiveTarget into DisplayObject.prototype,

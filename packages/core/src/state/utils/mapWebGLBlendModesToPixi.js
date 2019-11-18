@@ -1,4 +1,4 @@
-import { BLEND_MODES } from '@pixi/constants';
+import {BLEND_MODES} from "../../../../constants/src";
 
 /**
  * Maps gl blend combinations to WebGL.

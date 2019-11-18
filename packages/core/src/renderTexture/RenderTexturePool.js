@@ -1,6 +1,6 @@
 import { RenderTexture } from './RenderTexture';
 import { BaseRenderTexture } from './BaseRenderTexture';
-import { nextPow2 } from '@pixi/utils';
+import {nextPow2} from "../../../utils/src/data/pow2";
 
 /**
  * Experimental!

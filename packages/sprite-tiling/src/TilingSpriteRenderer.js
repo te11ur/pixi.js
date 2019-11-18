@@ -1,7 +1,9 @@
-import { ObjectRenderer, Shader, QuadUv } from '@pixi/core';
-import { WRAP_MODES } from '@pixi/constants';
-import { Matrix } from '@pixi/math';
-import { premultiplyTintToRgba, correctBlendMode } from '@pixi/utils';
+import {Shader} from "../../core/src/shader/Shader";
+import {ObjectRenderer} from "../../core/src/batch/ObjectRenderer";
+import {QuadUv} from "../../core/src/utils/QuadUv";
+import {WRAP_MODES} from "../../constants/src";
+import {Matrix} from "../../math/src/Matrix";
+import {correctBlendMode, premultiplyTintToRgba} from "../../utils/src/color/premultiply";
 
 import vertex from './tilingSprite.vert';
 import fragment from './tilingSprite.frag';

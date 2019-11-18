@@ -1,5 +1,5 @@
 import { Loader as ResourceLoader, middleware } from 'resource-loader';
-import { EventEmitter } from '@pixi/utils';
+import EventEmitter from "eventemitter3";
 import { TextureLoader } from './TextureLoader';
 
 /**

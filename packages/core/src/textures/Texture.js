@@ -2,9 +2,13 @@ import { BaseTexture } from './BaseTexture';
 import { ImageResource } from './resources/ImageResource';
 import { CanvasResource } from './resources/CanvasResource';
 import { TextureUvs } from './TextureUvs';
-import { settings } from '@pixi/settings';
-import { Rectangle, Point } from '@pixi/math';
-import { uid, TextureCache, getResolutionOfUrl, EventEmitter } from '@pixi/utils';
+import {settings} from "../../../settings/src/settings";
+import {Rectangle} from "../../../math/src/shapes/Rectangle";
+import {Point} from "../../../math/src/Point";
+import {uid} from "../../../utils/src/data/uid";
+import {TextureCache} from "../../../utils/src/media/caches";
+import {getResolutionOfUrl} from "../../../utils/src/network/getResolutionOfUrl";
+import EventEmitter from "eventemitter3";
 
 const DEFAULT_UVS = new TextureUvs();
 

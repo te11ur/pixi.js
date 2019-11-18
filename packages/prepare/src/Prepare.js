@@ -1,5 +1,5 @@
-import { BaseTexture } from '@pixi/core';
-import { Graphics } from '@pixi/graphics';
+import { BaseTexture } from '../../core/src/textures/BaseTexture';
+import { Graphics } from '../../graphics/src/Graphics';
 import { BasePrepare } from './BasePrepare';
 
 /**

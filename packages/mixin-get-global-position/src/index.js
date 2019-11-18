@@ -1,5 +1,5 @@
-import { DisplayObject } from '@pixi/display';
-import { Point } from '@pixi/math';
+import {DisplayObject} from "../../display/src/DisplayObject";
+import {Point} from "../../math/src/Point";
 
 /**
  * Returns the global position of the displayObject. Does not depend on object scale, rotation and pivot.

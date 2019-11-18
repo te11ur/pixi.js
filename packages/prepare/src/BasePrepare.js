@@ -1,9 +1,13 @@
-import { Texture, BaseTexture } from '@pixi/core';
-import { Ticker, UPDATE_PRIORITY } from '@pixi/ticker';
-import { settings } from '@pixi/settings';
-import { Container } from '@pixi/display';
-import { Text, TextStyle, TextMetrics } from '@pixi/text';
+import { Texture } from '../../core/src/textures/Texture';
+import { BaseTexture } from '../../core/src/textures/BaseTexture';
+import { Container } from '../../display/src/Container';
+import {Text} from "../../text/src/Text";
+import {TextStyle} from "../../text/src/TextStyle";
+import {TextMetrics} from "../../text/src/TextMetrics";
 import { CountLimiter } from './CountLimiter';
+import {Ticker} from "../../ticker/src/Ticker";
+import {UPDATE_PRIORITY} from "../../ticker/src/const";
+import {settings} from "./settings";
 
 /**
  * The prepare manager provides functionality to upload content to the GPU.

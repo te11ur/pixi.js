@@ -25,7 +25,7 @@ export * from './BezierUtils';
 export * from './QuadraticUtils';
 export * from './BatchPart';
 
-import { SHAPES } from '@pixi/math';
+import {SHAPES} from "../../../math/src/const";
 
 /**
  * Map of fill commands for each shape type.

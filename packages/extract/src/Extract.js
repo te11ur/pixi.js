@@ -1,6 +1,6 @@
-import { RenderTexture } from '@pixi/core';
-import { CanvasRenderTarget } from '@pixi/utils';
-import { Rectangle } from '@pixi/math';
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {CanvasRenderTarget} from "../../utils/src/media/CanvasRenderTarget";
+import {RenderTexture} from "../../core/src/renderTexture/RenderTexture";
 
 const TEMP_RECT = new Rectangle();
 const BYTES_PER_PIXEL = 4;

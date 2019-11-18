@@ -1,6 +1,6 @@
 import { System } from '../System';
-import { settings } from '../settings';
-import { ENV } from '@pixi/constants';
+import {settings} from "../settings";
+import {ENV} from "../../../constants/src";
 
 let CONTEXT_UID = 0;
 

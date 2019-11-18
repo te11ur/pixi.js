@@ -1,4 +1,4 @@
-import { settings } from '@pixi/settings';
+import { settings } from '../../settings/src/settings';
 
 /**
  * Default number of uploads per frame using prepare plugin.

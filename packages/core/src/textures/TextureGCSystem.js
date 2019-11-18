@@ -1,6 +1,6 @@
 import { System } from '../System';
-import { GC_MODES } from '@pixi/constants';
-import { settings } from '@pixi/settings';
+import {settings} from "../../../settings/src/settings";
+import {GC_MODES} from "../../../constants/src";
 
 /**
  * System plugin to the renderer to manage texture garbage collection on the GPU,

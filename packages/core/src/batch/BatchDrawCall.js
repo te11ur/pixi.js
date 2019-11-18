@@ -1,4 +1,4 @@
-import { DRAW_MODES } from '@pixi/constants';
+import {DRAW_MODES} from "../../../constants/src";
 
 /**
  * Used by the batcher to draw batches.

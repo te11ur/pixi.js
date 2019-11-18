@@ -1,4 +1,4 @@
-import { earcut } from '@pixi/utils';
+import earcut from 'earcut';
 
 /**
  * Builds a rounded rectangle to draw

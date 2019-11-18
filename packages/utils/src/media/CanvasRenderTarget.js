@@ -1,4 +1,4 @@
-import { settings } from '@pixi/settings';
+import {settings} from "../../../settings/src/settings";
 
 /**
  * Creates a Canvas element of the given size to be used as a target for rendering to.

@@ -1,5 +1,5 @@
 import { Resource } from 'resource-loader';
-import { Texture } from '@pixi/core';
+import { Texture } from '../../core/src/textures/Texture';
 
 /**
  * Loader plugin for handling Texture resources.

@@ -1,6 +1,6 @@
-import { settings } from '@pixi/settings';
-import { removeItems } from '@pixi/utils';
+import {settings} from "./settings";
 import { DisplayObject } from './DisplayObject';
+import {removeItems} from "../../utils/src/data/removeItems";
 
 function sortChildren(a, b)
 {
@@ -99,8 +99,8 @@ export class Container extends DisplayObject
      *
      * Multiple items can be added like so: `myContainer.addChild(thingOne, thingTwo, thingThree)`
      *
-     * @param {...PIXI.DisplayObject} child - The DisplayObject(s) to add to the container
-     * @return {PIXI.DisplayObject} The first child that was added.
+     * @param {...DisplayObject} child - The DisplayObject(s) to add to the container
+     * @return {DisplayObject} The first child that was added.
      */
     addChild(child)
     {

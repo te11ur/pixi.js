@@ -2,9 +2,10 @@ import { System } from '../System';
 import { RenderTexturePool } from '../renderTexture/RenderTexturePool';
 import { Quad } from '../utils/Quad';
 import { QuadUv } from '../utils/QuadUv';
-import { Rectangle, Matrix } from '@pixi/math';
+import {Rectangle} from "../../../math/src/shapes/Rectangle";
+import {Matrix} from "../../../math/src/Matrix";
 import { UniformGroup } from '../shader/UniformGroup';
-import { DRAW_MODES } from '@pixi/constants';
+import {DRAW_MODES} from "../../../constants/src";
 
 /**
  * System plugin to the renderer to manage filter states.

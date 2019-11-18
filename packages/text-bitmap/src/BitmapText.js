@@ -1,9 +1,12 @@
-import { Texture } from '@pixi/core';
-import { Container } from '@pixi/display';
-import { ObservablePoint, Point, Rectangle } from '@pixi/math';
-import { settings } from '@pixi/settings';
-import { Sprite } from '@pixi/sprite';
-import { removeItems, getResolutionOfUrl } from '@pixi/utils';
+import { Texture } from '../../core/src/textures/Texture';
+import { Container } from '../../display/src/Container';
+import {ObservablePoint} from "../../math/src/ObservablePoint";
+import {Point} from "../../math/src/Point";
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {settings} from "../../settings/src/settings";
+import {Sprite} from "../../sprite/src/Sprite";
+import {removeItems} from "../../utils/src/data/removeItems";
+import {getResolutionOfUrl} from "../../utils/src/network/getResolutionOfUrl";
 
 /**
  * A BitmapText object will create a line or multiple lines of text using bitmap font.

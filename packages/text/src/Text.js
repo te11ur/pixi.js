@@ -1,9 +1,11 @@
 /* eslint max-depth: [2, 8] */
-import { Sprite } from '@pixi/sprite';
-import { Texture } from '@pixi/core';
-import { settings } from '@pixi/settings';
-import { Rectangle } from '@pixi/math';
-import { sign, trimCanvas, hex2rgb, string2hex } from '@pixi/utils';
+import {Sprite} from "../../sprite/src/Sprite";
+import { Texture } from '../../core/src/textures/Texture';
+import {settings} from "../../settings/src/settings";
+import {Rectangle} from "../../math/src/shapes/Rectangle";
+import {sign} from "../../utils/src/data/sign";
+import {trimCanvas} from "../../utils/src/media/trimCanvas";
+import {hex2rgb, string2hex} from "../../utils/src/color/hex";
 import { TEXT_GRADIENT } from './const';
 import { TextStyle } from './TextStyle';
 import { TextMetrics } from './TextMetrics';

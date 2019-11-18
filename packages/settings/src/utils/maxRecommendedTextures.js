@@ -1,5 +1,4 @@
-import isMobile from 'ismobilejs';
-
+import {ismobile} from "../../../utils/src/const";
 /**
  * The maximum recommended texture units to use.
  * In theory the bigger the better, and for desktop we'll use as many as we can.
@@ -17,11 +16,11 @@ export function maxRecommendedTextures(max)
 {
     let allowMax = true;
 
-    if (isMobile.tablet || isMobile.phone)
+    if (ismobile.tablet || ismobile.phone)
     {
         allowMax = false;
 
-        if (isMobile.apple.device)
+        if (ismobile.apple.device)
         {
             const match = (navigator.userAgent).match(/OS (\d+)_(\d+)?/);
 
@@ -36,7 +35,7 @@ export function maxRecommendedTextures(max)
                 }
             }
         }
-        if (isMobile.android.device)
+        if (ismobile.android.device)
         {
             const match = (navigator.userAgent).match(/Android\s([0-9.]*)/);
 

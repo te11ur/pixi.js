@@ -1,5 +1,5 @@
 import { ArrayResource } from './ArrayResource';
-import { TARGETS } from '@pixi/constants';
+import {TARGETS} from "../../../../constants/src";
 
 /**
  * Resource for a CubeTexture which contains six resources.

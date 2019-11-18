@@ -1,4 +1,4 @@
-import { Point } from '@pixi/math';
+import { Point } from '../../math/src/Point';
 
 /**
  * Holds all information related to an Interaction event

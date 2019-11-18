@@ -1,4 +1,5 @@
-import { Polygon, PI_2 } from '@pixi/math';
+import {Polygon} from "../../../math/src/shapes/Polygon";
+import {PI_2} from "../../../math/src/const";
 
 /**
  * Draw a star shape with an arbitrary number of points.

@@ -1,5 +1,5 @@
 import { System } from '../System';
-import { Rectangle } from '@pixi/math';
+import {Rectangle} from "../../../math/src/shapes/Rectangle";
 
 const tempRect = new Rectangle();
 

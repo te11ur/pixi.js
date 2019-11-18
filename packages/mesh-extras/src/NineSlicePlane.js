@@ -1,4 +1,4 @@
-import { Texture } from '@pixi/core';
+import { Texture } from '../../core/src/textures/Texture';
 import { SimplePlane } from './SimplePlane';
 
 const DEFAULT_BORDER_SIZE = 10;

@@ -1,5 +1,5 @@
-import { Filter } from '@pixi/core';
-import { settings } from '@pixi/settings';
+import {Filter} from "../../../core/src/filters/Filter";
+import {settings} from "../../../settings/src/settings";
 import { BlurFilterPass } from './BlurFilterPass';
 
 /**

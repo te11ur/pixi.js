@@ -1,5 +1,6 @@
 import { AbstractRenderer } from './AbstractRenderer';
-import { sayHello, isWebGLSupported } from '@pixi/utils';
+import {isWebGLSupported} from "../../utils/src/browser/isWebGLSupported";
+//import {sayHello} from "../../utils/src/browser/hello";
 import { MaskSystem } from './mask/MaskSystem';
 import { StencilSystem } from './mask/StencilSystem';
 import { ScissorSystem } from './mask/ScissorSystem';
@@ -14,10 +15,10 @@ import { ShaderSystem } from './shader/ShaderSystem';
 import { ContextSystem } from './context/ContextSystem';
 import { BatchSystem } from './batch/BatchSystem';
 import { TextureGCSystem } from './textures/TextureGCSystem';
-import { RENDERER_TYPE } from '@pixi/constants';
+import {RENDERER_TYPE} from "../../constants/src";
 import { UniformGroup } from './shader/UniformGroup';
-import { Matrix } from '@pixi/math';
-import { Runner } from '@pixi/runner';
+import {Matrix} from "../../math/src/Matrix";
+import {Runner} from "../../runner/src/Runner";
 
 /**
  * The Renderer draws the scene and all its content onto a WebGL enabled canvas.
@@ -265,7 +266,7 @@ export class Renderer extends AbstractRenderer
          */
         this.renderingToScreen = true;
 
-        sayHello(this.context.webGLVersion === 2 ? 'WebGL 2' : 'WebGL 1');
+        //sayHello(this.context.webGLVersion === 2 ? 'WebGL 2' : 'WebGL 1');
 
         this.resize(this.options.width, this.options.height);
     }

@@ -1,8 +1,10 @@
-import { Shader, Program, TextureMatrix } from '@pixi/core';
+import {Shader} from "../../core/src/shader/Shader";
 import vertex from './shader/mesh.vert';
 import fragment from './shader/mesh.frag';
-import { Matrix } from '@pixi/math';
-import { premultiplyTintToRgba } from '@pixi/utils';
+import {Program} from "../../core/src/shader/Program";
+import {TextureMatrix} from "../../core/src/textures/TextureMatrix";
+import {Matrix} from "../../math/src/Matrix";
+import {premultiplyTintToRgba} from "../../utils/src/color/premultiply";
 
 /**
  * Slightly opinionated default shader for PixiJS 2D objects.

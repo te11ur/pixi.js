@@ -1,6 +1,6 @@
 import { Resource } from './Resource';
 import { BaseTexture } from '../BaseTexture';
-import { TARGETS } from '@pixi/constants';
+import {TARGETS} from "../../../../constants/src";
 import { autoDetectResource } from './autoDetectResource';
 
 /**

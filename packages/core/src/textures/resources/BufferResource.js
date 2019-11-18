@@ -1,5 +1,5 @@
 import { Resource } from './Resource';
-import { ALPHA_MODES } from '@pixi/constants';
+import {ALPHA_MODES} from "../../../../constants/src";
 
 /**
  * @interface SharedArrayBuffer

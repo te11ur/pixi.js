@@ -1,8 +1,8 @@
 import { System } from '../System';
 import { BaseTexture } from './BaseTexture';
 import { GLTexture } from './GLTexture';
-import { removeItems } from '@pixi/utils';
-import { MIPMAP_MODES, WRAP_MODES, SCALE_MODES, TYPES } from '@pixi/constants';
+import {removeItems} from "../../../utils/src/data/removeItems";
+import {MIPMAP_MODES, SCALE_MODES, TYPES, WRAP_MODES} from "../../../constants/src";
 
 /**
  * System plugin to the renderer to manage textures.

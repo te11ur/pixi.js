@@ -1,4 +1,4 @@
-import { Runner } from '@pixi/runner';
+import {Runner} from "../../../../runner/src/Runner";
 
 /**
  * Base resource class for textures that manages validation and uploading, depending on its type.

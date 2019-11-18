@@ -7,4 +7,8 @@
  * @memberof PIXI
  * @example data:image/png;base64
  */
+import isMobile from "ismobilejs";
+
 export const DATA_URI = /^\s*data:(?:([\w-]+)\/([\w+.-]+))?(?:;charset=([\w-]+))?(?:;(base64))?,(.*)/i;
+
+export const ismobile = isMobile();

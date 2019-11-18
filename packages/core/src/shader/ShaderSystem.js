@@ -1,9 +1,9 @@
 import { System } from '../System';
 import { GLProgram } from './GLProgram';
-import { generateUniformsSync,
-    unsafeEvalSupported,
-    defaultValue,
-    compileProgram } from './utils';
+import {generateUniformsSync} from "./utils/generateUniformsSync";
+import {unsafeEvalSupported} from "./utils/unsafeEvalSupported";
+import {defaultValue} from "./utils/defaultValue";
+import {compileProgram} from "./utils/compileProgram";
 
 let UID = 0;
 

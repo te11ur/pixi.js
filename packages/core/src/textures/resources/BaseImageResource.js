@@ -1,6 +1,6 @@
 import { Resource } from './Resource';
-import { determineCrossOrigin } from '@pixi/utils';
-import { ALPHA_MODES } from '@pixi/constants';
+import {determineCrossOrigin} from "../../../../utils/src/network/determineCrossOrigin";
+import {ALPHA_MODES} from "../../../../constants/src";
 
 /**
  * Base for all the image/canvas resources

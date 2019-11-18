@@ -1,11 +1,13 @@
-import { BaseTextureCache, EventEmitter, isPow2, TextureCache, uid } from '@pixi/utils';
-import { FORMATS, SCALE_MODES, TARGETS, TYPES, ALPHA_MODES } from '@pixi/constants';
+import {BaseTextureCache, TextureCache} from "../../../utils/src/media/caches";
+import EventEmitter from "eventemitter3";
+import {isPow2} from "../../../utils/src/data/pow2";
+import {uid} from "../../../utils/src/data/uid";
+import {ALPHA_MODES, FORMATS, SCALE_MODES, TARGETS, TYPES} from "../../../constants/src";
 
 import { Resource } from './resources/Resource';
 import { BufferResource } from './resources/BufferResource';
 import { autoDetectResource } from './resources/autoDetectResource';
-
-import { settings } from '@pixi/settings';
+import {settings} from "../settings";
 
 const defaultBufferOptions = {
     scaleMode: SCALE_MODES.NEAREST,
