@@ -2,6 +2,8 @@ import { settings } from './settings';
 import { UPDATE_PRIORITY } from './const';
 import { TickerListener } from './TickerListener';
 
+export type TickerCallback<T> = (this: T, dt: number) => any;
+
 /**
  * A Ticker class that runs an update loop that other objects listen to.
  *
@@ -257,7 +259,7 @@ export class Ticker
      * @param {number} [priority=PIXI.UPDATE_PRIORITY.NORMAL] - The priority for emitting
      * @returns {PIXI.Ticker} This instance of a ticker
      */
-    add(fn: (dt?: number) => any, context: any, priority = UPDATE_PRIORITY.NORMAL): this
+    add<T = any>(fn: TickerCallback<T>, context: T, priority = UPDATE_PRIORITY.NORMAL): this
     {
         return this._addListener(new TickerListener(fn, context, priority));
     }
@@ -270,7 +272,7 @@ export class Ticker
      * @param {number} [priority=PIXI.UPDATE_PRIORITY.NORMAL] - The priority for emitting
      * @returns {PIXI.Ticker} This instance of a ticker
      */
-    addOnce(fn: (dt?: number) => any, context: any, priority = UPDATE_PRIORITY.NORMAL): this
+    addOnce<T = any>(fn: TickerCallback<T>, context: T, priority = UPDATE_PRIORITY.NORMAL): this
     {
         return this._addListener(new TickerListener(fn, context, priority, true));
     }
@@ -329,7 +331,7 @@ export class Ticker
      * @param {*} [context] - The listener context to be removed
      * @returns {PIXI.Ticker} This instance of a ticker
      */
-    remove(fn: (dt?: number) => any, context: any): this
+    remove<T = any>(fn: TickerCallback<T>, context: T): this
     {
         let listener = this._head.next;
 
@@ -354,6 +356,29 @@ export class Ticker
         }
 
         return this;
+    }
+
+    /**
+     * Counts the number of listeners on this ticker.
+     *
+     * @returns {number} The number of listeners on this ticker
+     */
+    get count(): number
+    {
+        if (!this._head)
+        {
+            return 0;
+        }
+
+        let count = 0;
+        let current = this._head;
+
+        while ((current = current.next))
+        {
+            count++;
+        }
+
+        return count;
     }
 
     /**
