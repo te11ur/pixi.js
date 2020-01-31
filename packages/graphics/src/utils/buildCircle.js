@@ -7,7 +7,7 @@ import {SHAPES} from "../../../math/src/const";
  *
  * @ignore
  * @private
- * @param {PIXI.WebGLGraphicsData} graphicsData - The graphics object to draw
+ * @param {WebGLGraphicsData} graphicsData - The graphics object to draw
  * @param {object} webGLData - an object containing all the WebGL-specific information to create this shape
  * @param {object} webGLDataNativeLines - an object containing all the WebGL-specific information to create nativeLines
  */

@@ -30,10 +30,6 @@ const hitTestEvent = {
  * This manager also supports multitouch.
  *
  * An instance of this class is automatically created by default, and can be found at `renderer.plugins.interaction`
- *
- * @class
- * @extends PIXI.utils.EventEmitter
- * @memberof PIXI.interaction
  */
 export class InteractionManager extends EventEmitter
 {

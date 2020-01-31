@@ -21,10 +21,6 @@ function sortChildren(a, b)
  * let container = new PIXI.Container();
  * container.addChild(sprite);
  * ```
- *
- * @class
- * @extends PIXI.DisplayObject
- * @memberof PIXI
  */
 export class Container extends DisplayObject
 {
@@ -147,9 +143,9 @@ export class Container extends DisplayObject
     /**
      * Adds a child to the container at a specified index. If the index is out of bounds an error will be thrown
      *
-     * @param {PIXI.DisplayObject} child - The child to add
+     * @param {DisplayObject} child - The child to add
      * @param {number} index - The index to place the child in
-     * @return {PIXI.DisplayObject} The child that was added.
+     * @return {DisplayObject} The child that was added.
      */
     addChildAt(child, index)
     {
@@ -332,7 +328,7 @@ export class Container extends DisplayObject
      *
      * @param {number} [beginIndex=0] - The beginning position.
      * @param {number} [endIndex=this.children.length] - The ending position. Default value is size of the container.
-     * @returns {PIXI.DisplayObject[]} List of removed children
+     * @returns {DisplayObject[]} List of removed children
      */
     removeChildren(beginIndex = 0, endIndex)
     {
@@ -485,7 +481,7 @@ export class Container extends DisplayObject
     /**
      * Renders the object using the WebGL renderer
      *
-     * @param {PIXI.Renderer} renderer - The renderer
+     * @param {Renderer} renderer - The renderer
      */
     render(renderer)
     {
@@ -516,7 +512,7 @@ export class Container extends DisplayObject
      * Render the object using the WebGL renderer and advanced features.
      *
      * @protected
-     * @param {PIXI.Renderer} renderer - The renderer
+     * @param {Renderer} renderer - The renderer
      */
     renderAdvanced(renderer)
     {
@@ -580,7 +576,7 @@ export class Container extends DisplayObject
      * To be overridden by the subclasses.
      *
      * @protected
-     * @param {PIXI.Renderer} renderer - The renderer
+     * @param {Renderer} renderer - The renderer
      */
     _render(renderer) // eslint-disable-line no-unused-vars
     {

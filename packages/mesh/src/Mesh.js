@@ -22,19 +22,15 @@ const tempPolygon = new Polygon();
  * - State - This is the state of WebGL required to render the mesh.
  *
  * Through a combination of the above elements you can render anything you want, 2D or 3D!
- *
- * @class
- * @extends PIXI.Container
- * @memberof PIXI
  */
 export class Mesh extends Container
 {
     /**
-     * @param {PIXI.Geometry} geometry  the geometry the mesh will use
-     * @param {PIXI.Shader|PIXI.MeshMaterial} shader  the shader the mesh will use
-     * @param {PIXI.State} [state] the state that the WebGL context is required to be in to render the mesh
-     *        if no state is provided, uses {@link PIXI.State.for2d} to create a 2D state for PixiJS.
-     * @param {number} [drawMode=PIXI.DRAW_MODES.TRIANGLES] the drawMode, can be any of the PIXI.DRAW_MODES consts
+     * @param {Geometry} geometry  the geometry the mesh will use
+     * @param {Shader|MeshMaterial} shader  the shader the mesh will use
+     * @param {State} [state] the state that the WebGL context is required to be in to render the mesh
+     *        if no state is provided, uses {@link State.for2d} to create a 2D state for PixiJS.
+     * @param {number} [drawMode=DRAW_MODES.TRIANGLES] the drawMode, can be any of the DRAW_MODES consts
      */
     constructor(geometry, shader, state, drawMode = DRAW_MODES.TRIANGLES)// vertices, uvs, indices, drawMode)
     {
@@ -54,7 +50,7 @@ export class Mesh extends Container
         /**
          * Represents the vertex and fragment shaders that processes the geometry and runs on the GPU.
          * Can be shared between multiple Mesh objects.
-         * @member {PIXI.Shader|PIXI.MeshMaterial}
+         * @member {Shader|MeshMaterial}
          */
         this.shader = shader;
 

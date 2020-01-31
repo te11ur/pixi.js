@@ -11,8 +11,6 @@ import { Transform } from './Transform';
  * | b | d | ty|
  * | 0 | 0 | 1 |
  * ```
- * @class
- * @memberof PIXI
  */
 export class Matrix
 {
@@ -102,7 +100,7 @@ export class Matrix
      * @param {number} tx - Matrix component
      * @param {number} ty - Matrix component
      *
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     set(a, b, c, d, tx, ty)
     {
@@ -164,9 +162,9 @@ export class Matrix
      * Get a new position with the current transformation applied.
      * Can be used to go from a child's coordinate space to the world coordinate space. (e.g. rendering)
      *
-     * @param {PIXI.Point} pos - The origin
-     * @param {PIXI.Point} [newPos] - The point that the new position is assigned to (allowed to be same as input)
-     * @return {PIXI.Point} The new point, transformed through this matrix
+     * @param {Point} pos - The origin
+     * @param {Point} [newPos] - The point that the new position is assigned to (allowed to be same as input)
+     * @return {Point} The new point, transformed through this matrix
      */
     apply(pos, newPos)
     {
@@ -185,9 +183,9 @@ export class Matrix
      * Get a new position with the inverse of the current transformation applied.
      * Can be used to go from the world coordinate space to a child's coordinate space. (e.g. input)
      *
-     * @param {PIXI.Point} pos - The origin
-     * @param {PIXI.Point} [newPos] - The point that the new position is assigned to (allowed to be same as input)
-     * @return {PIXI.Point} The new point, inverse-transformed through this matrix
+     * @param {Point} pos - The origin
+     * @param {Point} [newPos] - The point that the new position is assigned to (allowed to be same as input)
+     * @return {Point} The new point, inverse-transformed through this matrix
      */
     applyInverse(pos, newPos)
     {
@@ -209,7 +207,7 @@ export class Matrix
      *
      * @param {number} x How much to translate x by
      * @param {number} y How much to translate y by
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     translate(x, y)
     {
@@ -224,7 +222,7 @@ export class Matrix
      *
      * @param {number} x The amount to scale horizontally
      * @param {number} y The amount to scale vertically
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     scale(x, y)
     {
@@ -242,7 +240,7 @@ export class Matrix
      * Applies a rotation transformation to the matrix.
      *
      * @param {number} angle - The angle in radians.
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     rotate(angle)
     {
@@ -266,8 +264,8 @@ export class Matrix
     /**
      * Appends the given Matrix to this Matrix.
      *
-     * @param {PIXI.Matrix} matrix - The matrix to append.
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @param {Matrix} matrix - The matrix to append.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     append(matrix)
     {
@@ -299,7 +297,7 @@ export class Matrix
      * @param {number} rotation - Rotation in radians
      * @param {number} skewX - Skew on the x axis
      * @param {number} skewY - Skew on the y axis
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     setTransform(x, y, pivotX, pivotY, scaleX,
         scaleY, rotation, skewX, skewY)
@@ -318,8 +316,8 @@ export class Matrix
     /**
      * Prepends the given Matrix to this Matrix.
      *
-     * @param {PIXI.Matrix} matrix - The matrix to prepend
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @param {Matrix} matrix - The matrix to prepend
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     prepend(matrix)
     {
@@ -345,8 +343,8 @@ export class Matrix
     /**
      * Decomposes the matrix (x, y, scaleX, scaleY, and rotation) and sets the properties on to a transform.
      *
-     * @param {PIXI.Transform} transform - The transform to apply the properties to.
-     * @return {PIXI.Transform} The transform with the newly applied properties
+     * @param {Transform} transform - The transform to apply the properties to.
+     * @return {Transform} The transform with the newly applied properties
      */
     decompose(transform)
     {
@@ -387,7 +385,7 @@ export class Matrix
     /**
      * Inverts this matrix
      *
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     invert()
     {
@@ -411,7 +409,7 @@ export class Matrix
     /**
      * Resets this Matrix to an identity (default) matrix.
      *
-     * @return {PIXI.Matrix} This matrix. Good for chaining method calls.
+     * @return {Matrix} This matrix. Good for chaining method calls.
      */
     identity()
     {
@@ -428,7 +426,7 @@ export class Matrix
     /**
      * Creates a new Matrix object with the same values as this one.
      *
-     * @return {PIXI.Matrix} A copy of this matrix. Good for chaining method calls.
+     * @return {Matrix} A copy of this matrix. Good for chaining method calls.
      */
     clone()
     {
@@ -447,8 +445,8 @@ export class Matrix
     /**
      * Changes the values of the given matrix to be the same as the ones in this matrix
      *
-     * @param {PIXI.Matrix} matrix - The matrix to copy to.
-     * @return {PIXI.Matrix} The matrix given in parameter with its values updated.
+     * @param {Matrix} matrix - The matrix to copy to.
+     * @return {Matrix} The matrix given in parameter with its values updated.
      */
     copyTo(matrix)
     {
@@ -465,8 +463,8 @@ export class Matrix
     /**
      * Changes the values of the matrix to be the same as the ones in given matrix
      *
-     * @param {PIXI.Matrix} matrix - The matrix to copy from.
-     * @return {PIXI.Matrix} this
+     * @param {Matrix} matrix - The matrix to copy from.
+     * @return {Matrix} this
      */
     copyFrom(matrix)
     {
@@ -485,7 +483,7 @@ export class Matrix
      *
      * @static
      * @const
-     * @member {PIXI.Matrix}
+     * @member {Matrix}
      */
     static get IDENTITY()
     {
@@ -497,7 +495,7 @@ export class Matrix
      *
      * @static
      * @const
-     * @member {PIXI.Matrix}
+     * @member {Matrix}
      */
     static get TEMP_MATRIX()
     {

@@ -3,9 +3,6 @@ import { Matrix } from './Matrix';
 
 /**
  * Transform that takes care about its versions
- *
- * @class
- * @memberof PIXI
  */
 export class Transform
 {
@@ -14,49 +11,49 @@ export class Transform
      *
      * @static
      * @constant
-     * @member {PIXI.Transform}
+     * @member {Transform}
      */
     static IDENTITY = new Transform();
 
     /**
      * The world transformation matrix.
      *
-     * @member {PIXI.Matrix}
+     * @member {Matrix}
      */
     worldTransform;
 
     /**
      * The local transformation matrix.
      *
-     * @member {PIXI.Matrix}
+     * @member {Matrix}
      */
     localTransform;
 
     /**
      * The coordinate of the object relative to the local coordinates of the parent.
      *
-     * @member {PIXI.ObservablePoint}
+     * @member {ObservablePoint}
      */
     position;
 
     /**
      * The scale factor of the object.
      *
-     * @member {PIXI.ObservablePoint}
+     * @member {ObservablePoint}
      */
     scale;
 
     /**
      * The pivot point of the displayObject that it rotates around.
      *
-     * @member {PIXI.ObservablePoint}
+     * @member {ObservablePoint}
      */
     pivot;
 
     /**
      * The skew amount, on the x and y axis.
      *
-     * @member {PIXI.ObservablePoint}
+     * @member {ObservablePoint}
      */
     skew;
 
@@ -209,7 +206,7 @@ export class Transform
     /**
      * Updates the local and the world transformation matrices.
      *
-     * @param {PIXI.Transform} parentTransform - The parent transform
+     * @param {Transform} parentTransform - The parent transform
      */
     updateTransform(parentTransform)
     {
@@ -254,7 +251,7 @@ export class Transform
     /**
      * Decomposes a matrix and sets the transforms properties based on it.
      *
-     * @param {PIXI.Matrix} matrix - The matrix to decompose
+     * @param {Matrix} matrix - The matrix to decompose
      */
     setFromMatrix(matrix)
     {

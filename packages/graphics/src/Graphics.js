@@ -39,15 +39,11 @@ const DEFAULT_SHADERS = {};
  * it is necessary to call `destroy()` to properly dereference the underlying
  * GraphicsGeometry and avoid a memory leak. Alternatively, keep using the same
  * Graphics instance and call `clear()` between redraws.
- *
- * @class
- * @extends PIXI.Container
- * @memberof PIXI
  */
 export class Graphics extends Container
 {
     /**
-     * @param {PIXI.GraphicsGeometry} [geometry=null] - Geometry to use, if omitted
+     * @param {GraphicsGeometry} [geometry=null] - Geometry to use, if omitted
      *        will create a new GraphicsGeometry instance.
      */
     constructor(geometry = null)
@@ -57,7 +53,7 @@ export class Graphics extends Container
          * Includes vertex positions, face indices, normals, colors, UVs, and
          * custom attributes within buffers, reducing the cost of passing all
          * this data to the GPU. Can be shared between multiple Mesh or Graphics objects.
-         * @member {PIXI.GraphicsGeometry}
+         * @member {GraphicsGeometry}
          * @readonly
          */
         this.geometry = geometry || new GraphicsGeometry();
@@ -74,14 +70,14 @@ export class Graphics extends Container
         /**
          * Represents the WebGL state the Graphics required to render, excludes shader and geometry. E.g.,
          * blend mode, culling, depth testing, direction of rendering triangles, backface, etc.
-         * @member {PIXI.State}
+         * @member {State}
          */
         this.state = State.for2d();
 
         /**
          * Current fill style
          *
-         * @member {PIXI.FillStyle}
+         * @member {FillStyle}
          * @protected
          */
         this._fillStyle = new FillStyle();
@@ -89,7 +85,7 @@ export class Graphics extends Container
         /**
          * Current line style
          *
-         * @member {PIXI.LineStyle}
+         * @member {LineStyle}
          * @protected
          */
         this._lineStyle = new LineStyle();
@@ -97,7 +93,7 @@ export class Graphics extends Container
         /**
          * Current shape transform matrix.
          *
-         * @member {PIXI.Matrix}
+         * @member {Matrix}
          * @protected
          */
         this._matrix = null;
@@ -114,7 +110,7 @@ export class Graphics extends Container
         /**
          * Current path
          *
-         * @member {PIXI.Polygon}
+         * @member {Polygon}
          * @protected
          */
         this.currentPath = null;
@@ -128,7 +124,6 @@ export class Graphics extends Container
          *
          * @name cacheAsBitmap
          * @member {boolean}
-         * @memberof PIXI.Graphics#
          * @default false
          */
 

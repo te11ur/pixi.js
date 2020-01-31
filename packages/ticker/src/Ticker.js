@@ -7,9 +7,6 @@ import { TickerListener } from './TickerListener';
  *
  * This class is composed around listeners meant for execution on the next requested animation frame.
  * Animation frames are requested only when necessary, e.g. When the ticker is started and the emitter has listeners.
- *
- * @class
- * @memberof PIXI
  */
 export class Ticker
 {

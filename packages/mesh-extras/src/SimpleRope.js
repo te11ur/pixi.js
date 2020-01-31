@@ -8,15 +8,10 @@ import {MeshMaterial} from "../../mesh/src/MeshMaterial";
  *
  *```js
  * for (let i = 0; i < 20; i++) {
- *     points.push(new PIXI.Point(i * 50, 0));
+ *     points.push(new Point(i * 50, 0));
  * };
- * let rope = new PIXI.SimpleRope(PIXI.Texture.from("snake.png"), points);
+ * let rope = new SimpleRope(Texture.from("snake.png"), points);
  *  ```
- *
- * @class
- * @extends PIXI.Mesh
- * @memberof PIXI
- *
  */
 export class SimpleRope extends Mesh
 {

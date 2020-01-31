@@ -8,20 +8,16 @@ import {MeshMaterial} from "../../mesh/src/MeshMaterial";
  *
  *```js
  * for (let i = 0; i < 20; i++) {
- *     points.push(new PIXI.Point(i * 50, 0));
+ *     points.push(new Point(i * 50, 0));
  * };
- * let SimplePlane = new PIXI.SimplePlane(PIXI.Texture.from("snake.png"), points);
+ * let SimplePlane = new SimplePlane(Texture.from("snake.png"), points);
  *  ```
- *
- * @class
- * @extends PIXI.Mesh
- * @memberof PIXI
  *
  */
 export class SimplePlane extends Mesh
 {
     /**
-     * @param {PIXI.Texture} texture - The texture to use on the SimplePlane.
+     * @param {Texture} texture - The texture to use on the SimplePlane.
      * @param {number} verticesX - The number of vertices in the x-axis
      * @param {number} verticesY - The number of vertices in the y-axis
      */

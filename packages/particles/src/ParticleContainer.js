@@ -209,7 +209,7 @@ export class ParticleContainer extends Container
      * Renders the container using the WebGL renderer
      *
      * @private
-     * @param {PIXI.Renderer} renderer - The webgl renderer
+     * @param {Renderer} renderer - The webgl renderer
      */
     render(renderer)
     {

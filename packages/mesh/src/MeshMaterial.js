@@ -8,19 +8,16 @@ import {premultiplyTintToRgba} from "../../utils/src/color/premultiply";
 
 /**
  * Slightly opinionated default shader for PixiJS 2D objects.
- * @class
- * @memberof PIXI
- * @extends PIXI.Shader
  */
 export class MeshMaterial extends Shader
 {
     /**
-     * @param {PIXI.Texture} uSampler - Texture that material uses to render.
+     * @param {Texture} uSampler - Texture that material uses to render.
      * @param {object} [options] - Additional options
      * @param {number} [options.alpha=1] - Default alpha.
      * @param {number} [options.tint=0xFFFFFF] - Default tint.
      * @param {string} [options.pluginName='batch'] - Renderer plugin for batching.
-     * @param {PIXI.Program} [options.program=0xFFFFFF] - Custom program.
+     * @param {Program} [options.program=0xFFFFFF] - Custom program.
      * @param {object} [options.uniforms] - Custom uniforms.
      */
     constructor(uSampler, options)
@@ -57,7 +54,7 @@ export class MeshMaterial extends Shader
         /**
          * TextureMatrix instance for this Mesh, used to track Texture changes
          *
-         * @member {PIXI.TextureMatrix}
+         * @member {TextureMatrix}
          * @readonly
          */
         this.uvMatrix = new TextureMatrix(uSampler);

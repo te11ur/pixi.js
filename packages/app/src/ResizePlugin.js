@@ -3,60 +3,50 @@
  * @private
  * @class
  */
-export class ResizePlugin
-{
+export class ResizePlugin {
     /**
      * Initialize the plugin with scope of application instance
      * @static
      * @private
      * @param {object} [options] - See application options
      */
-    static init(options)
-    {
+    static init(options) {
         /**
          * The element or window to resize the application to.
          * @type {Window|HTMLElement}
          * @name resizeTo
          * @memberof PIXI.Application#
          */
-        Object.defineProperty(this, 'resizeTo',
-            {
-                set(dom)
-                {
-                    window.removeEventListener('resize', this.resize);
-                    this._resizeTo = dom;
-                    if (dom)
-                    {
-                        window.addEventListener('resize', this.resize);
-                        this.resize();
-                    }
-                },
-                get()
-                {
-                    return this._resizeTo;
-                },
-            });
+        Object.defineProperty(this, 'resizeTo', {
+            set(dom) {
+                window.removeEventListener('resize', this.resize);
+                this._resizeTo = dom;
+                if (dom) {
+                    window.addEventListener('resize', this.resize);
+                    this.resize();
+                }
+            },
+            get() {
+                return this._resizeTo;
+            },
+        });
 
         /**
          * If `resizeTo` is set, calling this function
          * will resize to the width and height of that element.
          * @method PIXI.Application#resize
          */
-        this.resize = () =>
-        {
-            if (this._resizeTo)
-            {
+        this.resize = () => {
+            if (this._resizeTo) {
                 // Resize to the window
-                if (this._resizeTo === window)
-                {
+                if (this._resizeTo === window) {
                     this.renderer.resize(
                         window.innerWidth,
                         window.innerHeight
                     );
                 }
                 // Resize to other HTML entities
-                else
-                {
+                else {
                     this.renderer.resize(
                         this._resizeTo.clientWidth,
                         this._resizeTo.clientHeight
@@ -75,8 +65,7 @@ export class ResizePlugin
      * @static
      * @private
      */
-    static destroy()
-    {
+    static destroy() {
         this.resizeTo = null;
         this.resize = null;
     }

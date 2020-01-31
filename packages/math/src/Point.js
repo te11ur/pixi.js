@@ -1,10 +1,6 @@
 /**
  * The Point object represents a location in a two-dimensional coordinate system, where x represents
  * the horizontal axis and y represents the vertical axis.
- *
- * @class
- * @memberof PIXI
- * @implements IPoint
  */
 export class Point
 {
@@ -33,7 +29,7 @@ export class Point
     /**
      * Creates a clone of this point
      *
-     * @return {PIXI.Point} a copy of the point
+     * @return {Point} a copy of the point
      */
     clone()
     {
@@ -43,7 +39,7 @@ export class Point
     /**
      * Copies x and y from the given point
      *
-     * @param {PIXI.IPoint} p - The point to copy from
+     * @param {Point} p - The point to copy from
      * @returns {this} Returns itself.
      */
     copyFrom(p)
@@ -56,8 +52,8 @@ export class Point
     /**
      * Copies x and y into the given point
      *
-     * @param {PIXI.IPoint} p - The point to copy.
-     * @returns {PIXI.IPoint} Given point with values updated
+     * @param {Point} p - The point to copy.
+     * @returns {Point} Given point with values updated
      */
     copyTo(p)
     {
@@ -69,7 +65,7 @@ export class Point
     /**
      * Returns true if the given point is equal to this point
      *
-     * @param {PIXI.IPoint} p - The point to check
+     * @param {Point} p - The point to check
      * @returns {boolean} Whether the given point equal to this point
      */
     equals(p)

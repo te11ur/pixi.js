@@ -1,8 +1,5 @@
 /**
  * Event class that mimics native DOM events.
- *
- * @class
- * @memberof PIXI.interaction
  */
 export class InteractionEvent
 {

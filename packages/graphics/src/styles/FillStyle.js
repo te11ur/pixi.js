@@ -2,9 +2,6 @@ import { Texture } from '../../../core/src/textures/Texture';
 
 /**
  * Fill style object for Graphics.
- *
- * @class
- * @memberof PIXI
  */
 export class FillStyle
 {

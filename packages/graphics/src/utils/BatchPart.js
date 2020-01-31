@@ -1,6 +1,5 @@
 /**
  * A structure to hold interim batch objects.
- *
  */
 export class BatchPart
 {

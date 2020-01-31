@@ -31,8 +31,6 @@ import {getResolutionOfUrl} from "../../utils/src/network/getResolutionOfUrl";
  * ```
  *
  * @class
- * @extends PIXI.Container
- * @memberof PIXI
  */
 export class BitmapText extends Container
 {

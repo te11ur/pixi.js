@@ -29,10 +29,6 @@ const DEFAULT_BORDER_SIZE = 10;
  *     area 5 will be stretched both horizontally and vertically
  * </pre>
  *
- * @class
- * @extends PIXI.SimplePlane
- * @memberof PIXI
- *
  */
 export class NineSlicePlane extends SimplePlane
 {

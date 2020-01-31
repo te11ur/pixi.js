@@ -12,18 +12,12 @@ const tempMat = new Matrix();
  *
  * Takes track of Texture changes through `_lastTextureID` private field.
  * Use `update()` method call to track it from outside.
- *
- * @see PIXI.Texture
- * @see PIXI.Mesh
- * @see PIXI.TilingSprite
- * @class
- * @memberof PIXI
  */
 export class TextureMatrix
 {
     /**
      *
-     * @param {PIXI.Texture} texture observed texture
+     * @param {Texture} texture observed texture
      * @param {number} [clampMargin] Changes frame clamping, 0.5 by default. Use -0.5 for extra border.
      * @constructor
      */

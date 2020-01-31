@@ -8,7 +8,6 @@
  * - {@link PIXI.RoundedRectangle}
  *
  * @interface IHitArea
- * @memberof PIXI
  */
 
 /**
@@ -16,7 +15,6 @@
  *
  * @method
  * @name contains
- * @memberof PIXI.IHitArea#
  * @param {number} x - The X coordinate of the point to test
  * @param {number} y - The Y coordinate of the point to test
  * @return {boolean} Whether the x/y coordinates are within this area
@@ -29,7 +27,6 @@
  * @private
  * @name interactiveTarget
  * @type {Object}
- * @memberof PIXI.interaction
  * @example
  *      function MyObject() {}
  *
@@ -50,8 +47,6 @@ export const interactiveTarget = {
      * sprite.on('tap', (event) => {
      *    //handle event
      * });
-     * @member {boolean}
-     * @memberof PIXI.DisplayObject#
      */
     interactive: false,
 
@@ -60,7 +55,6 @@ export const interactiveTarget = {
      * Setting this to false allows PixiJS to bypass a recursive `hitTest` function
      *
      * @member {boolean}
-     * @memberof PIXI.Container#
      */
     interactiveChildren: true,
 
@@ -72,8 +66,6 @@ export const interactiveTarget = {
      * const sprite = new PIXI.Sprite(texture);
      * sprite.interactive = true;
      * sprite.hitArea = new PIXI.Rectangle(0, 0, 100, 100);
-     * @member {PIXI.IHitArea}
-     * @memberof PIXI.DisplayObject#
      */
     hitArea: null,
 
@@ -82,16 +74,15 @@ export const interactiveTarget = {
      * Setting this changes the 'cursor' property to `'pointer'`.
      *
      * @example
-     * const sprite = new PIXI.Sprite(texture);
+     * const sprite = new Sprite(texture);
      * sprite.interactive = true;
      * sprite.buttonMode = true;
-     * @member {boolean}
-     * @memberof PIXI.DisplayObject#
      */
     get buttonMode()
     {
         return this.cursor === 'pointer';
     },
+
     set buttonMode(value)
     {
         if (value)
@@ -115,7 +106,6 @@ export const interactiveTarget = {
      * @see https://developer.mozilla.org/en/docs/Web/CSS/cursor
      *
      * @member {string}
-     * @memberof PIXI.DisplayObject#
      */
     cursor: null,
 
@@ -123,7 +113,6 @@ export const interactiveTarget = {
      * Internal set of all active pointers, by identifier
      *
      * @member {Map<number, InteractionTrackingData>}
-     * @memberof PIXI.DisplayObject#
      * @private
      */
     get trackedPointers()

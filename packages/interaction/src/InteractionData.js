@@ -2,9 +2,6 @@ import { Point } from '../../math/src/Point';
 
 /**
  * Holds all information related to an Interaction event
- *
- * @class
- * @memberof PIXI.interaction
  */
 export class InteractionData
 {
@@ -143,13 +140,13 @@ export class InteractionData
     /**
      * This will return the local coordinates of the specified displayObject for this InteractionData
      *
-     * @param {PIXI.DisplayObject} displayObject - The DisplayObject that you would like the local
+     * @param {DisplayObject} displayObject - The DisplayObject that you would like the local
      *  coords off
-     * @param {PIXI.Point} [point] - A Point object in which to store the value, optional (otherwise
+     * @param {Point} [point] - A Point object in which to store the value, optional (otherwise
      *  will create a new point)
-     * @param {PIXI.Point} [globalPos] - A Point object containing your custom global coords, optional
+     * @param {Point} [globalPos] - A Point object containing your custom global coords, optional
      *  (otherwise will use the current global coords)
-     * @return {PIXI.Point} A point containing the coordinates of the InteractionData position relative
+     * @return {Point} A point containing the coordinates of the InteractionData position relative
      *  to the DisplayObject
      */
     getLocalPosition(displayObject, point, globalPos)

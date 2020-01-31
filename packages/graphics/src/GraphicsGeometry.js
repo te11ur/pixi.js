@@ -27,10 +27,6 @@ const tmpBounds = new Bounds();
  *
  * GraphicsGeometry is designed to not be continually updating the geometry since it's expensive
  * to re-tesselate using **earcut**. Consider using {@link PIXI.Mesh} for this use-case, it's much faster.
- *
- * @class
- * @extends PIXI.BatchGeometry
- * @memberof PIXI
  */
 export class GraphicsGeometry extends BatchGeometry
 {

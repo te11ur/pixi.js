@@ -2,9 +2,6 @@ import { FillStyle } from './FillStyle';
 
 /**
  * Represents the line style for Graphics.
- * @memberof PIXI
- * @class
- * @extends PIXI.FillStyle
  */
 export class LineStyle extends FillStyle
 {

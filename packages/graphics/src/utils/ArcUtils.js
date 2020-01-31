@@ -3,8 +3,6 @@ import {PI_2} from "../../../math/src/const";
 
 /**
  * Utilities for arc curves
- * @class
- * @private
  */
 export class ArcUtils
 {

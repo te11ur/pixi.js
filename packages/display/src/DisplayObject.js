@@ -10,10 +10,6 @@ import {DEG_TO_RAD, RAD_TO_DEG} from "../../math/src/const";
  * The base class for all objects that are rendered on the screen.
  *
  * This is an abstract class and should not be used on its own; rather it should be extended.
- *
- * @class
- * @extends PIXI.utils.EventEmitter
- * @memberof PIXI
  */
 export class DisplayObject extends EventEmitter {
     /**
@@ -51,7 +47,7 @@ export class DisplayObject extends EventEmitter {
          * World transform and local transform of this object.
          * This will become read-only later, please do not assign anything there unless you know what are you doing.
          *
-         * @member {PIXI.Transform}
+         * @member {Transform}
          */
         this.transform = new Transform();
 
@@ -298,11 +294,11 @@ export class DisplayObject extends EventEmitter {
     /**
      * Calculates the global position of the display object.
      *
-     * @param {PIXI.IPoint} position - The world origin to calculate from.
-     * @param {PIXI.IPoint} [point] - A Point object in which to store the value, optional
+     * @param {Point} position - The world origin to calculate from.
+     * @param {Point} [point] - A Point object in which to store the value, optional
      *  (otherwise will create a new Point).
      * @param {boolean} [skipUpdate=false] - Should we skip the update transform.
-     * @return {PIXI.IPoint} A point object representing the position of this object.
+     * @return {Point} A point object representing the position of this object.
      */
     toGlobal(position, point, skipUpdate = false) {
         if (!skipUpdate) {
@@ -327,12 +323,12 @@ export class DisplayObject extends EventEmitter {
     /**
      * Calculates the local position of the display object relative to another point.
      *
-     * @param {PIXI.IPoint} position - The world origin to calculate from.
-     * @param {PIXI.DisplayObject} [from] - The DisplayObject to calculate the global position from.
-     * @param {PIXI.IPoint} [point] - A Point object in which to store the value, optional
+     * @param {Point} position - The world origin to calculate from.
+     * @param {DisplayObject} [from] - The DisplayObject to calculate the global position from.
+     * @param {Point} [point] - A Point object in which to store the value, optional
      *  (otherwise will create a new Point).
      * @param {boolean} [skipUpdate=false] - Should we skip the update transform
-     * @return {PIXI.IPoint} A point object representing the position of this object
+     * @return {Point} A point object representing the position of this object
      */
     toLocal(position, from, point, skipUpdate) {
         if (from) {
@@ -361,7 +357,7 @@ export class DisplayObject extends EventEmitter {
     /**
      * Renders the object using the WebGL renderer.
      *
-     * @param {PIXI.Renderer} renderer - The renderer.
+     * @param {Renderer} renderer - The renderer.
      */
     render(renderer) // eslint-disable-line no-unused-vars
     {
@@ -371,8 +367,8 @@ export class DisplayObject extends EventEmitter {
     /**
      * Set the parent Container of this DisplayObject.
      *
-     * @param {PIXI.Container} container - The Container to add this DisplayObject to.
-     * @return {PIXI.Container} The Container that this DisplayObject was added to.
+     * @param {Container} container - The Container to add this DisplayObject to.
+     * @return {Container} The Container that this DisplayObject was added to.
      */
     setParent(container) {
         if (!container || !container.addChild) {
@@ -396,7 +392,7 @@ export class DisplayObject extends EventEmitter {
      * @param {number} [skewY=0] - The Y skew value
      * @param {number} [pivotX=0] - The X pivot value
      * @param {number} [pivotY=0] - The Y pivot value
-     * @return {PIXI.DisplayObject} The DisplayObject instance
+     * @return {DisplayObject} The DisplayObject instance
      */
     setTransform(x = 0, y = 0, scaleX = 1, scaleY = 1, rotation = 0, skewX = 0, skewY = 0, pivotX = 0, pivotY = 0) {
         this.position.x = x;
@@ -474,7 +470,7 @@ export class DisplayObject extends EventEmitter {
     /**
      * Current transform of the object based on world (parent) factors.
      *
-     * @member {PIXI.Matrix}
+     * @return {Matrix}
      * @readonly
      */
     get worldTransform() {
@@ -484,7 +480,7 @@ export class DisplayObject extends EventEmitter {
     /**
      * Current transform of the object based on local factors: position, scale, other stuff.
      *
-     * @member {PIXI.Matrix}
+     * @return {Matrix}
      * @readonly
      */
     get localTransform() {
@@ -495,7 +491,7 @@ export class DisplayObject extends EventEmitter {
      * The coordinate of the object relative to the local coordinates of the parent.
      * Assignment by value since pixi-v4.
      *
-     * @member {PIXI.IPoint}
+     * @return {Point}
      */
     get position() {
         return this.transform.position;
@@ -510,7 +506,7 @@ export class DisplayObject extends EventEmitter {
      * The scale factor of the object.
      * Assignment by value since pixi-v4.
      *
-     * @member {PIXI.IPoint}
+     * @member {Point}
      */
     get scale() {
         return this.transform.scale;
@@ -525,7 +521,7 @@ export class DisplayObject extends EventEmitter {
      * The pivot point of the displayObject that it rotates around.
      * Assignment by value since pixi-v4.
      *
-     * @member {PIXI.IPoint}
+     * @member {Point}
      */
     get pivot() {
         return this.transform.pivot;
@@ -540,7 +536,7 @@ export class DisplayObject extends EventEmitter {
      * The skew factor for the object in radians.
      * Assignment by value since pixi-v4.
      *
-     * @member {PIXI.ObservablePoint}
+     * @member {ObservablePoint}
      */
     get skew() {
         return this.transform.skew;
@@ -668,7 +664,7 @@ export class DisplayObject extends EventEmitter {
  * DisplayObject default updateTransform, does not update children of container.
  * Will crash if there's no parent element.
  *
- * @memberof PIXI.DisplayObject#
+ * @memberof DisplayObject#
  * @function displayObjectUpdateTransform
  */
 DisplayObject.prototype.displayObjectUpdateTransform = DisplayObject.prototype.updateTransform;
