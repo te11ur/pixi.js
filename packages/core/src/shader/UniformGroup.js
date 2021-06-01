@@ -53,6 +53,23 @@ export class UniformGroup
         this.static = !!_static;
     }
 
+	copy(source) {
+		this.uniforms = Object.assign({}, source.uniforms);
+		for (const i in this.uniforms) {
+			if (this.uniforms[i] instanceof Array || this.uniforms[i] instanceof Float32Array) {
+				this.uniforms[i] = this.uniforms[i].slice();
+			}
+		}
+		this.static = source.static;
+		this.group = source.group;
+		//Object.assign(this.syncUniforms, source.syncUniforms);
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
+
     update()
     {
         this.dirtyId++;

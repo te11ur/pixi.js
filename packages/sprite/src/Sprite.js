@@ -195,6 +195,30 @@ export class Sprite extends Container
         this._roundPixels = settings.ROUND_PIXELS;
     }
 
+	copy(source) {
+    	super.copy(source);
+
+		this._anchor.copyFrom(source._anchor);
+		this.tint = source.tint;
+		this.shader = source.shader;
+		this.blendMode = source.blendMode;
+		if(source.uvs) {
+			this.uvs = source.uvs.slice();
+		}
+		this.vertexData = source.vertexData.slice();
+		if(source.vertexTrimmedData) {
+			this.vertexTrimmedData = source.vertexTrimmedData.slice();
+		}
+		this.pluginName = source.pluginName;
+		this.isSprite = source.isSprite;
+		this._roundPixels = source._roundPixels;
+		return this;
+	}
+
+	clone() {
+		return new this.constructor(this.texture).copy(this);
+	}
+
     /**
      * When the texture is updated, this event will fire to update the scale and frame
      *

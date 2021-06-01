@@ -80,6 +80,37 @@ export class Container extends DisplayObject
          */
     }
 
+	traverse(cb) {
+    	super.traverse(cb);
+
+		this.children.forEach(children => {
+			children.traverse(cb);
+		});
+
+		return this;
+	}
+
+	copy(source) {
+		super.copy(source);
+
+		this.sortableChildren = source.sortableChildren;
+		this.sortDirty = source.sortDirty;
+
+		this.children = source.children.slice();
+
+		this.children.forEach((children, i, array) => {
+			children = array[i] = children.clone();
+			children.parent = this;
+			children.updateTransform();
+		});
+
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
+
     /**
      * Overridable method that can be used by Container subclasses whenever the children array is modified
      *

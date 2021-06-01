@@ -22,6 +22,8 @@ export class MeshMaterial extends Shader
      */
     constructor(uSampler, options)
     {
+		const originOptions = Object.assign({}, options);
+
         const uniforms = {
             uSampler,
             alpha: 1,
@@ -42,6 +44,8 @@ export class MeshMaterial extends Shader
         }
 
         super(options.program || Program.from(vertex, fragment), uniforms);
+
+		this.originOptions = originOptions;
 
         /**
          * Only do update if tint or alpha changes.
@@ -77,6 +81,19 @@ export class MeshMaterial extends Shader
         this.tint = options.tint;
         this.alpha = options.alpha;
     }
+
+	clone() {
+		return new this.constructor(
+			this.texture,
+			{
+				tint: this.tint,
+				alpha: this.alpha,
+				pluginName: this.pluginName,
+				program: this.program,
+				uniforms: Object.assign({}, this.originOptions.uniforms)
+			}
+		).copy(this);
+	}
 
     /**
      * Reference to the texture being rendered.

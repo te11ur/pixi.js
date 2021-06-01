@@ -1,3 +1,5 @@
+import { Buffer } from '../../core/src/geometry/Buffer';
+
 /**
  * Class controls cache for UV mapping from Texture normal space to BaseTexture normal space.
  *
@@ -8,7 +10,7 @@ export class MeshBatchUvs
 {
     /**
      * @param {PIXI.Buffer} uvBuffer - Buffer with normalized uv's
-     * @param {PIXI.TextureMatrix} uvMatrix - Material UV matrix
+     * @param {TextureMatrix} uvMatrix - Material UV matrix
      */
     constructor(uvBuffer, uvMatrix)
     {
@@ -37,6 +39,23 @@ export class MeshBatchUvs
 
         this._updateID = 0;
     }
+
+	copy(source) {
+		this.uvBuffer = new Buffer(
+			source.uvBuffer.data.slice(),
+			source.uvBuffer.static,
+			source.uvBuffer.index
+		);
+		this.uvMatrix = source.uvMatrix.clone();
+		if(source.data) {
+			this.data = source.data.slice();
+		}
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
 
     /**
      * updates

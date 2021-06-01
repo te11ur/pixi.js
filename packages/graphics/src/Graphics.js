@@ -168,18 +168,46 @@ export class Graphics extends Container
         this.blendMode = BLEND_MODES.NORMAL;
     }
 
+	copy(source) {
+		super.copy(source);
+		this.geometry = source.geometry.clone();
+		this.geometry.refCount++;
+		this.shader = null;
+		this.state = source.state;
+		this._fillStyle = source._fillStyle.clone();
+		this._lineStyle = source._lineStyle.clone();
+		if(source._matrix) {
+			this._matrix = source._matrix.clone();
+		}
+		this._holeMode = source._holeMode;
+
+		if(source.currentPath) {
+			this.currentPath = source.currentPath.clone();
+		}
+		this.batches = source.batches.slice();
+		this.batchTint = source.batchTint;
+
+		if(source.vertexData) {
+			this.vertexData = source.vertexData.slice();
+		}
+		this.batchDirty = source.batchDirty;
+		this.pluginName = source.pluginName;
+		this.tint = source.tint;
+		this.blendMode = source.blendMode;
+		return this;
+	}
+
     /**
      * Creates a new Graphics object with the same values as this one.
      * Note that the only the properties of the object are cloned, not its transform (position,scale,etc)
      *
      * @return {PIXI.Graphics} A clone of the graphics object
      */
-    clone()
-    {
-        this.finishPoly();
+	clone() {
+		this.finishPoly();
 
-        return new Graphics(this.geometry);
-    }
+		return new this.constructor(this.geometry).copy(this);
+	}
 
     /**
      * The blend mode to be applied to the graphic shape. Apply a value of

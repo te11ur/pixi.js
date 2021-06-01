@@ -157,6 +157,28 @@ export class BitmapText extends Container
         this.updateText();
     }
 
+	copy(source) {
+		super.copy(source);
+
+		this._anchor.copyFrom(source._anchor);
+		this._text = source._text;
+		this.dirty = source.dirty;
+		this.roundPixels = source.roundPixels;
+		this.updateText();
+		return this;
+	}
+
+	clone() {
+		return new this.constructor(this.text, {
+			tint: this._font.tint,
+			align: this._font.align,
+			font: {
+				name: this._font.name,
+				size: this._font.size
+			}
+		}).copy(this);
+	}
+
     /**
      * Renders text and updates it when needed
      *

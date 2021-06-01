@@ -52,6 +52,16 @@ export class Shader
         }
     }
 
+	copy(source) {
+		this.program = source.program;
+		this.uniformGroup = source.uniformGroup.clone();
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
+
     // TODO move to shader system..
     checkUniformExists(name, group)
     {

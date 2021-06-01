@@ -40,6 +40,17 @@ export class Bounds
         this.rect = null;
     }
 
+	copy(source) {
+		this.minX = source.minX;
+		this.minY = source.minY;
+		this.maxX = source.maxX;
+		this.maxY = source.maxY;
+		if(source.rect) {
+			this.rect = source.rect.clone();
+		}
+    	return this;
+	}
+
     /**
      * Checks if bounds are empty.
      *

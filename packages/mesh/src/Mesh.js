@@ -134,6 +134,37 @@ export class Mesh extends Container
         this.batchUvs = null;
     }
 
+	copy(source) {
+		super.copy(source);
+
+		this.geometry = source.geometry.clone();
+		this.geometry.refCount++;
+		this.shader = source.shader.clone();
+		this.state = source.state;
+		this.drawMode = source.drawMode;
+
+		this.start = source.start;
+		this.size = source.size;
+		if(source.uvs) {
+			this.uvs = source.uvs.slice();
+		}
+		if(source.indices) {
+			this.indices = source.indices.slice();
+		}
+		this.vertexData = source.vertexData.slice();
+		this.tint = source.tint;
+		this.blendMode = source.blendMode;
+		this._roundPixels = source._roundPixels;
+		if(source.batchUvs) {
+			this.batchUvs = source.batchUvs.clone();
+		}
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
+
     /**
      * To change mesh uv's, change its uvBuffer data and increment its _updateID.
      * @member {PIXI.Buffer}

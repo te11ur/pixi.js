@@ -84,6 +84,21 @@ export class TextureMatrix
         this.isSimple = false;
     }
 
+	copy(source) {
+		this.texture = source._texture;
+		this.mapCoord.copyFrom(source.mapCoord);
+		this.uClampFrame = source.uClampFrame.slice();
+		this.uClampOffset = source.uClampOffset.slice();
+		this.clampOffset = source.clampOffset;
+		this.clampMargin = source.clampMargin;
+		this.isSimple = source.isSimple;
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
+
     /**
      * texture property
      * @member {PIXI.Texture}

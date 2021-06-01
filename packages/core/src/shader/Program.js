@@ -33,6 +33,7 @@ export class Program
     {
         this.id = UID++;
 
+		this.name = name;
         /**
          * The vertex shader.
          *
@@ -79,6 +80,24 @@ export class Program
 
         this.syncUniforms = null;
     }
+
+	copy(source) {
+		this.name = source.name;
+		this.vertexSrc = source.vertexSrc;
+		this.fragmentSrc = source.fragmentSrc;
+		this.syncUniforms = source.syncUniforms;
+		Object.assign(this.glPrograms, source.glPrograms);
+		this.extractData(this.vertexSrc, this.fragmentSrc);
+		return this;
+	}
+
+	clone() {
+		return new this.constructor(
+			'',
+			'',
+			this.name
+		).copy(this);
+	}
 
     /**
      * Extracts the data for a buy creating a small test program

@@ -32,6 +32,14 @@ export class SimplePlane extends Mesh
         this.texture = texture;
     }
 
+	clone() {
+		return new this.constructor(
+			this.texture,
+			this.geometry.segWidth,
+			this.geometry.segHeight
+		).copy(this);
+	}
+
     /**
      * Method used for overrides, to do something in case texture frame was changed.
      * Meshes based on plane can override it and change more details based on texture.

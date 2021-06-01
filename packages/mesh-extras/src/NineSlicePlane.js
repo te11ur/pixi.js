@@ -98,6 +98,16 @@ export class NineSlicePlane extends SimplePlane
         this.texture = texture;
     }
 
+	clone() {
+		return new this.constructor(
+			this.texture,
+			this._leftWidth,
+			this._topHeight,
+			this._rightWidth,
+			this._bottomHeight
+		).copy(this);
+	}
+
     textureUpdated()
     {
         this._textureID = this.shader.texture._updateID;

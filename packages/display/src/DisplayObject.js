@@ -135,7 +135,7 @@ export class DisplayObject extends EventEmitter {
         /**
          * The bounds object, this is used to calculate and store the bounds of the displayObject.
          *
-         * @member {PIXI.Bounds}
+         * @member {Bounds}
          * @protected
          */
         this._bounds = new Bounds();
@@ -186,6 +186,42 @@ export class DisplayObject extends EventEmitter {
          */
         this.isMask = false;
     }
+
+	traverse(cb) {
+    	cb(this);
+    	return this;
+	}
+
+	copy(source) {
+		this.transform.copy(source.transform);
+		this.alpha = source.alpha;
+		this.visible = source.visible;
+		this.renderable = source.renderable;
+		this.worldAlpha = source.worldAlpha;
+		this._zIndex = source._zIndex;
+
+		if(source.filterArea) {
+			this.filterArea.copyFrom(source.filterArea);
+		}
+
+		if(source.filters) {
+			this.filters = source.filters.slice();
+		}
+
+		if(source._enabledFilters) {
+			this._enabledFilters = source._enabledFilters.slice();
+		}
+		this._bounds.copy(source._bounds);
+
+		this._mask = source._mask;
+		this.isSprite = source.isSprite;
+		this.isMask = source.isMask;
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
 
     /**
      * @protected

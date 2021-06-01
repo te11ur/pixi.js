@@ -82,6 +82,20 @@ export class TilingSprite extends Sprite {
         this.uvRespectAnchor = false;
     }
 
+	copy(source) {
+		super.copy(source);
+		this.tileTransform.copy(source.tileTransform);
+		this.uvMatrix.copy(source.uvMatrix);
+		this._canvasPattern = source._canvasPattern;
+		this.pluginName = source.pluginName;
+		this.uvRespectAnchor = source.uvRespectAnchor;
+		return this;
+	}
+
+	clone() {
+		return new this.constructor(this.texture, this._width, this._height).copy(this);
+	}
+
     /**
      * Changes frame clamping in corresponding textureTransform, shortcut
      * Change to -0.5 to add a pixel to the edge, recommended for transparent trimmed textures in atlas

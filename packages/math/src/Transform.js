@@ -154,6 +154,21 @@ export class Transform
         this._parentID = 0;
     }
 
+	copy(source) {
+		this.worldTransform.copyFrom(source.worldTransform);
+		this.localTransform.copyFrom(source.localTransform);
+		this.position.copyFrom(source.position);
+		this.scale.copyFrom(source.scale);
+		this.pivot.copyFrom(source.pivot);
+		this.pivot.copyFrom(source.pivot);
+		this.skew.copyFrom(source.skew);
+		return this;
+	}
+
+	clone() {
+		return new this.constructor().copy(this);
+	}
+
     /**
      * Called when a value changes.
      *
